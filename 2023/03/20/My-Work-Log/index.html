@@ -16,15 +16,15 @@
   <meta name="author" content="JasmineChen">
   <meta name="keywords" content="">
   
-    <meta name="description" content="My-Work-LogMy work log in the reverse way &#x2F;** 2023&#x2F;3&#x2F;23*&#x2F;  Tune-A-Video: a funny py model that transform the  text into video.  v-for and v-if three solution??  template v-for filt">
+    <meta name="description" content="My-Work-LogMy work log in the reverse way &#x2F;** 2023&#x2F;4&#x2F;6&#x2F;  v-deep(&lt;vue3) :deep(vue3) so to handle the selectd  child component in the component library ,can use the v-deep or :dee">
 <meta property="og:type" content="article">
 <meta property="og:title" content="My-Work-Log">
 <meta property="og:url" content="http://example.com/2023/03/20/My-Work-Log/index.html">
 <meta property="og:site_name" content="JasmineChen&#39;s Blog">
-<meta property="og:description" content="My-Work-LogMy work log in the reverse way &#x2F;** 2023&#x2F;3&#x2F;23*&#x2F;  Tune-A-Video: a funny py model that transform the  text into video.  v-for and v-if three solution??  template v-for filt">
+<meta property="og:description" content="My-Work-LogMy work log in the reverse way &#x2F;** 2023&#x2F;4&#x2F;6&#x2F;  v-deep(&lt;vue3) :deep(vue3) so to handle the selectd  child component in the component library ,can use the v-deep or :dee">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-20T09:11:47.000Z">
-<meta property="article:modified_time" content="2023-03-23T13:52:27.072Z">
+<meta property="article:modified_time" content="2023-04-07T13:03:10.962Z">
 <meta property="article:author" content="JasmineChen">
 <meta property="article:tag" content="Daily">
 <meta name="twitter:card" content="summary_large_image">
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          507 字
+          2.7k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          5 分钟
+          23 分钟
         
       </span>
     
@@ -275,6 +275,128 @@
               <div class="markdown-body">
                 
                 <h1 id="My-Work-Log"><a href="#My-Work-Log" class="headerlink" title="My-Work-Log"></a>My-Work-Log</h1><p><strong>My work log in the reverse way</strong></p>
+<p>&#x2F;** 2023&#x2F;4&#x2F;6&#x2F;</p>
+<ol>
+<li>v-deep(&lt;vue3) :deep(vue3)<ul>
+<li>so to handle the selectd  child component in the component library ,can use the v-deep or :deep in style</li>
+</ul>
+</li>
+<li>change img src in the array when bundle the project</li>
+</ol>
+<ul>
+<li>use import the img in the array<br><code>import cloudImg from &quot;@/assets/images/screen/cloud.png&quot;;</code></li>
+</ul>
+<ol start="3">
+<li>the braket’s effect(role) is valid(diverse)</li>
+</ol>
+<ul>
+<li>await the data you can use the braket() to include it and get the key directly</li>
+</ul>
+<p>&#x2F;** 2023&#x2F;4&#x2F;6&#x2F;</p>
+<ol>
+<li>opacity and rgba<ul>
+<li>opacity:0.3 equal to rgba(255,255,255,0.3)</li>
+</ul>
+</li>
+</ol>
+<p>&#x2F;** 2023&#x2F;4&#x2F;3&#x2F;</p>
+<ol>
+<li>how to set line solid bot<ul>
+<li>set symbolSize and symbol:”circle”</li>
+</ul>
+</li>
+<li>I recommend to use set dataset to a array,<ul>
+<li>because in the array type,you can change the layout to the column or row;</li>
+</ul>
+</li>
+</ol>
+<p>&#x2F;** 2023&#x2F;3&#x2F;30&#x2F;</p>
+<ol>
+<li><p>how to let different bar overlap together in echarts</p>
+<ul>
+<li>maybe zLevel or stack </li>
+<li>stack is better! maybe!</li>
+</ul>
+</li>
+<li><p>can use label.formatter(callback()) to change label.style</p>
+<ul>
+<li>in the formatter callback() function, can get the option’s data and can get the index of the data by params.dataIndex.</li>
+</ul>
+</li>
+<li><p>how to let the text an the center of bar</p>
+<ul>
+<li>set: position: “inside”,</li>
+</ul>
+</li>
+<li><p>how to let the  show all label in the xAxis</p>
+<ul>
+<li>axisLabel: {   interval: 0,}</li>
+</ul>
+</li>
+<li><p>in the bar chart if you want to put a line</p>
+<ul>
+<li>you can set</li>
+</ul>
+</li>
+</ol>
+<p>&#x2F;** 2023&#x2F;3&#x2F;29&#x2F;</p>
+<ol>
+<li>Promise {<pending>} instead of a value?<ul>
+<li>because promise need to resolve, so must call <code>.then</code>to capture the resuslts.</li>
+</ul>
+</li>
+<li>to much items on the xAxis of echarts,and it doesn’t show all,so th solution</li>
+</ol>
+<p>&#x2F;** 2023&#x2F;3&#x2F;28&#x2F;</p>
+<ol>
+<li><p>echarts and button conflict</p>
+<ul>
+<li>use z-index to set different display weight（the conflict was caused because I set the chart-box a high display weight  than the button’s and  forgot to adjust it ）</li>
+</ul>
+</li>
+<li><p>vue3 composition API props and emits</p>
+<ul>
+<li>must to use defineProps and defineEmits to declare props and emits</li>
+</ul>
+</li>
+<li><p>what is low code platform of backend in the China Mobile?？</p>
+</li>
+<li><p>Response Layout：what should I use in rem、flex、vw、grid</p>
+<ul>
+<li><p>rem:  be determined by font-size and @media</p>
+</li>
+<li><p>flex: can use <strong>calc</strong> to determine the width, and use <strong>aspect-radio</strong> to change the height.&#96;&#96;</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.grid-container</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-wrap</span>: wrap;<br>&#125;<br><br><span class="hljs-selector-class">.grid-item</span> &#123;<br>  <span class="hljs-attribute">flex-basis</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">50%</span> - <span class="hljs-number">10px</span>);<br>  aspect-ratio: <span class="hljs-number">821</span>/<span class="hljs-number">351</span>;<br>  <span class="hljs-attribute">margin</span>: <span class="hljs-number">5px</span>;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<p>&#x2F;** 2023&#x2F;3&#x2F;27&#x2F;</p>
+<ol>
+<li>why rem can’t run <ul>
+<li>because i need to change the font-size at the root element</li>
+</ul>
+</li>
+<li>menu hover<ul>
+<li>use v-on  and bind the mouse event: mouseover and mouseout</li>
+</ul>
+</li>
+</ol>
+<p>&#x2F;** 2023&#x2F;3&#x2F;24*&#x2F;</p>
+<ol>
+<li>ECharts.API<ul>
+<li>title: can set the title’s style position,</li>
+<li>legend: 不同系列的标记，颜色和名字，也可以控制style position</li>
+</ul>
+</li>
+<li>echarts error<ul>
+<li>resize error: because vue’s dom is proxy,so it has conflict<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/B_rabbit_d/article/details/119275715">Reference1</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/apache/echarts/issues/13943">Reference2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
 <p>&#x2F;** 2023&#x2F;3&#x2F;23*&#x2F;</p>
 <ol>
 <li><p><a target="_blank" rel="noopener" href="https://github.com/showlab/Tune-A-Video/blob/main/tuneavideo/pipelines/pipeline_tuneavideo.py">Tune-A-Video</a>: a funny py model that transform the  text into video.</p>
