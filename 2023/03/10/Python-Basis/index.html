@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://www.liaoxuefeng.com/files/attachments/923923787018816/0">
 <meta property="og:image" content="https://www.liaoxuefeng.com/files/attachments/923923759189600/0">
 <meta property="article:published_time" content="2023-03-10T02:00:33.000Z">
-<meta property="article:modified_time" content="2023-03-15T01:57:14.441Z">
+<meta property="article:modified_time" content="2023-05-24T06:56:13.267Z">
 <meta property="article:author" content="JasmineChen">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary_large_image">
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.6k 字
+          14k 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          31 分钟
+          117 分钟
         
       </span>
     
@@ -453,7 +453,8 @@
 <p><strong>递归函数：</strong></p>
 <p>栈帧</p>
 <p>尾递归：尾递归是指，在函数返回的时候，调用自身本身，并且，return语句不能包含表达式</p>
-<h2 id="1-9-generator"><a href="#1-9-generator" class="headerlink" title="1.9.generator"></a>1.9.generator</h2><p>生成方法：</p>
+<h2 id="1-9-generator"><a href="#1-9-generator" class="headerlink" title="1.9.generator"></a>1.9.generator</h2><p><code>generator</code>:允许声明一个像<code>iterator</code>一样行为的函数</p>
+<p>创建方法：</p>
 <ol>
 <li><p>（）：<code>g = (x * x for x in range(10))</code></p>
 </li>
@@ -468,6 +469,316 @@
 <p>要获取generator函数返回值，必须捕获<code>StopIteration</code>错误，返回值包含在<code>StopIteration</code>的<code>value</code>中：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python">g = fib(<span class="hljs-number">6</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>     <span class="hljs-keyword">try</span>:<br>         x = <span class="hljs-built_in">next</span>(g)<br>         <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;g:&#x27;</span>, x)<br>     <span class="hljs-keyword">except</span> StopIteration <span class="hljs-keyword">as</span> e:<br>         <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Generator return value:&#x27;</span>, e.value)<br>         <span class="hljs-keyword">break</span><br></code></pre></td></tr></table></figure>
 
+<h2 id="1-10-高阶函数？？"><a href="#1-10-高阶函数？？" class="headerlink" title="1.10.高阶函数？？"></a>1.10.高阶函数？？</h2><ul>
+<li><p><code>map(fn(),Iterable) return Iterator</code></p>
+</li>
+<li><p><code>reduce(fn(),Iterable)</code>：函数必须接收两个参数，<code>reduce</code>把结果继续和序列的下一个元素做累积计算</p>
+<ul>
+<li><code>reduce(f, [x1, x2, x3, x4]) = f(f(f(x1, x2), x3), x4)</code></li>
+</ul>
+</li>
+<li><p><code>filter(fn(),Iterable)</code>：接收一个函数和一个序列，<code>filter()</code>把传入的函数依次作用于每个元素，然后根据返回值是<code>True</code>还是<code>False</code>决定保留还是丢弃该元素。</p>
+</li>
+<li><p><code>sorted(iterable, key=None, reverse=False)</code>：排序函数</p>
+</li>
+<li><p>匿名函数：关键字<code>lambda</code>表示匿名函数</p>
+</li>
+</ul>
+<p><strong>装饰器：</strong></p>
+<p><strong>偏函数：</strong></p>
+<p><code>Partial function</code>：把一个函数的某些参数给固定住（也就是设置默认值 | 函数的某个参数是可以提前获知的），返回一个新的函数，调用这个新函数会更简单。</p>
+<h2 id="1-11-面向对象"><a href="#1-11-面向对象" class="headerlink" title="1.11 面向对象??"></a>1.11 面向对象??</h2><p>重要概念：类(Class)和实例(Instance)</p>
+<ul>
+<li><p><code>_.value</code>:在变量前加<code>_</code>即为私有变量(<code>private</code>)</p>
+</li>
+<li><p>继承方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>(<span class="hljs-title class_ inherited__">Animal</span>):<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">run</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Dog is running...&#x27;</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">eat</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Eating meat...&#x27;</span>)<br>        <br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>(<span class="hljs-title class_ inherited__">Animal</span>):<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">run</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Dog is running...&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>isinstance(x, A_tuple)</code>:判断变量是否是某个类型</li>
+<li><code>type()</code>:判断对象类型</li>
+<li><code>type(fn)==types.FunctionType</code>:判断对象是否是函数</li>
+<li><code>dir()</code>:获取一个对象的所有属性和方法<ul>
+<li>类似<code>__xxx__</code>的属性和方法在Python中都是有特殊用途的，比如<code>__len__</code>方法返回长度。在Python中，如果你调用<code>len()</code>函数试图获取一个对象的长度，实际上，在<code>len()</code>函数内部，它自动去调用该对象的<code>__len__()</code>方法，</li>
+</ul>
+</li>
+<li><code>getattr()</code>、<code>setattr()</code>、<code>hasattr()</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>绑定属性或方法：</strong></p>
+<ul>
+<li><p><code>MethodType</code>:通过<code>MethodType</code>给实例绑定方法（给一个实例绑定的方法，对另一个实例是不起作用的）</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">set_age</span>(<span class="hljs-params">self,age</span>):<br>  self.age=age<br>  <br><span class="hljs-keyword">from</span> types <span class="hljs-keyword">import</span> MethodType<br>s.set_age=MethodType(set_age,s)	<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>可以给类原型<code>class</code>绑定方法</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">set_score</span>(<span class="hljs-params">self, score</span>):<br>  self.score = score<br><br>Student.set_score = set_score<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><code>使用__slots__</code>：限制添加的属性(仅对当前类实例起作用，对继承的子类是不起作用的)</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Student1</span>(<span class="hljs-title class_ inherited__">object</span>):<br>  __slots__ = (<span class="hljs-string">&#x27;name&#x27;</span>,<span class="hljs-string">&#x27;age&#x27;</span>)<br><br>s1=Student1()<br>s1.name=<span class="hljs-string">&#x27;bob&#x27;</span><br>s1.age=<span class="hljs-string">&#x27;18&#x27;</span><br>s1.score=<span class="hljs-string">&#x27;30&#x27;</span>;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><code>@property</code>:负责把一个方法变成属性调用</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Student2</span>(<span class="hljs-title class_ inherited__">object</span>):<br><span class="hljs-meta">  @property </span><span class="hljs-comment"># just like the getter</span><br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">score</span>(<span class="hljs-params">self</span>):<br>    <span class="hljs-keyword">return</span> self._score<br>  <br><span class="hljs-meta">  @score.setter</span><br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">score</span>(<span class="hljs-params">self,value</span>):<br>    self._score=value<br>    <br>s2 = Student2()<br>s2.score = <span class="hljs-number">60</span><br><span class="hljs-built_in">print</span>(s2._score) <span class="hljs-comment"># equal to print(s2.score)</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>MixIn??</strong></p>
+<p><strong>魔术方法</strong></p>
+<ul>
+<li><p><code>__repr__() | __str()__</code></p>
+<ul>
+<li><p><code>__str__()</code>返回用户看到的字符串</p>
+</li>
+<li><p><code>__repr__()</code>返回程序开发者看到的字符串</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Student3</span>(<span class="hljs-title class_ inherited__">object</span>):<br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name</span>):<br>    self.name = name<br>  <br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self</span>):<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;Student object (name=%s)&#x27;</span> % self.name<br>  <br>  <span class="hljs-comment"># __repr__ = __str__</span><br><br>s3 = Student3(<span class="hljs-string">&#x27;tom&#x27;</span>)<br><span class="hljs-built_in">print</span>(Student3(<span class="hljs-string">&#x27;bob&#x27;</span>))<br><span class="hljs-built_in">print</span>(s3)<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><code>__iter__()</code>: 返回一个迭代对象，</p>
+<ul>
+<li><p>Python的for循环就会不断调用该迭代对象的<code>__next__()</code>方法拿到循环的下一个值，直到遇到<code>StopIteration</code>错误时退出循环。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Fib</span>(<span class="hljs-title class_ inherited__">object</span>):<br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>    self.a, self.b = <span class="hljs-number">0</span>, <span class="hljs-number">1</span>  <span class="hljs-comment"># 初始化两个计数器a，b</span><br>  <br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__iter__</span>(<span class="hljs-params">self</span>):<br>    <span class="hljs-keyword">return</span> self  <span class="hljs-comment"># 实例本身就是迭代对象，故返回自己</span><br>  <br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__next__</span>(<span class="hljs-params">self</span>):<br>    self.a, self.b = self.b, self.a + self.b  <span class="hljs-comment"># 计算下一个值</span><br>    <span class="hljs-keyword">if</span> self.a &gt; <span class="hljs-number">100000</span>:  <span class="hljs-comment"># 退出循环的条件</span><br>      <span class="hljs-keyword">raise</span> StopIteration()<br>    <span class="hljs-keyword">return</span> self.a  <span class="hljs-comment"># 返回下一个值</span><br>  <br><span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> Fib():<br>  <span class="hljs-built_in">print</span>(n)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><code>__getitem__(self, item)</code>:用于实现对象的索引行为</p>
+</li>
+<li><p><code>__setitem__()</code>:把对象视作list或dict来对集合赋值</p>
+</li>
+<li><p><code>__delitem__()</code>:用于删除某个元素。</p>
+</li>
+<li><p><code>__getattr__(self,&#39;attr&#39;)</code>:动态返回一个属性</p>
+</li>
+<li><p><code>__call__()</code>:调用自身的属性或方法</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>枚举类</strong></p>
+<p>枚举类：<code>Enum</code></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">from</span> enum <span class="hljs-keyword">import</span> Enum<br><br>Month = Enum(<span class="hljs-string">&#x27;Month&#x27;</span>, (<span class="hljs-string">&#x27;Jan&#x27;</span>, <span class="hljs-string">&#x27;Feb&#x27;</span>, <span class="hljs-string">&#x27;Mar&#x27;</span>, <span class="hljs-string">&#x27;Apr&#x27;</span>, <span class="hljs-string">&#x27;May&#x27;</span>, <span class="hljs-string">&#x27;Jun&#x27;</span>, <span class="hljs-string">&#x27;Jul&#x27;</span>, <span class="hljs-string">&#x27;Aug&#x27;</span>, <span class="hljs-string">&#x27;Sep&#x27;</span>, <span class="hljs-string">&#x27;Oct&#x27;</span>, <span class="hljs-string">&#x27;Nov&#x27;</span>, <span class="hljs-string">&#x27;Dec&#x27;</span>))<br><span class="hljs-comment"># the structure like this</span><br><span class="hljs-comment">#&#x27;Jan&#x27;: &lt;Month.Jan: 1&gt;,the &#x27;Jan&#x27; is: name,the Month.Jan is: member the 1 is: member.value</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>@unique</code>:检查有没有重复值，类似<code>JavaScript</code>的<code>Symbol</code></li>
+</ul>
+<p><strong><code>type()</code></strong></p>
+<p><code>type()</code>函数既可以返回一个对象的类型，又可以创建出新的类型</p>
+<p>要创建一个class对象，<code>type()</code>函数依次传入3个参数：</p>
+<ol>
+<li>class的名称；</li>
+<li>继承的父类集合，注意Python支持多重继承，如果只有一个父类，别忘了tuple的单元素写法；</li>
+<li>class的方法名称与函数绑定，这里我们把函数<code>fn</code>绑定到方法名<code>hello</code>上。</li>
+</ol>
+<p>**<code>metaclass</code>**？？</p>
+<p><code>metaclass</code>:元类</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ListMetaClass</span>(<span class="hljs-title class_ inherited__">type</span>):<br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__new__</span>(<span class="hljs-params">cls, name, bases, attrs</span>):<br>    attrs[<span class="hljs-string">&#x27;add&#x27;</span>] = <span class="hljs-keyword">lambda</span> self, value: self.append(value)<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">type</span>.__new__(cls, name, bases, attrs)<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyList</span>(<span class="hljs-built_in">list</span>, metaclass=ListMetaClass):<br>  <span class="hljs-keyword">pass</span><br><br>L = MyList()<br>L.add(<span class="hljs-number">1</span>)<br><span class="hljs-built_in">print</span>(L)<br></code></pre></td></tr></table></figure>
+
+<p><strong>静态语言 vs 动态语言</strong></p>
+<p>对于静态语言（例如Java）来说，如果需要传入<code>Animal</code>类型，则传入的对象必须是<code>Animal</code>类型或者它的子类，否则，将无法调用<code>run()</code>方法。</p>
+<p>对于Python这样的动态语言来说，则不一定需要传入<code>Animal</code>类型。我们只需要保证传入的对象有一个<code>run()</code>方法就可以了：</p>
+<p>动态语言的“鸭子类型”，它并不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。</p>
+<h2 id="1-12-错误、调试和测试"><a href="#1-12-错误、调试和测试" class="headerlink" title="1.12 错误、调试和测试"></a>1.12 错误、调试和测试</h2><h3 id="1-12-1-错误处理"><a href="#1-12-1-错误处理" class="headerlink" title="1.12.1 错误处理"></a>1.12.1 <strong>错误处理</strong></h3><p><code>try...except...finally...</code></p>
+<ul>
+<li>可以用多个<code>expect</code>来捕获不同类型的错误</li>
+<li>如果没有错误发生，可以在<code>except</code>语句块后面加一个<code>else</code>，当没有错误发生时，会自动执行<code>else</code>语句</li>
+<li>Python的错误其实也是class，所有的错误类型都继承自<code>BaseException</code>，所以在使用<code>except</code>时需要注意的是，它不但捕获该类型的错误，还把其子类也“一网打尽”。</li>
+</ul>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs routeros">try:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;try...&#x27;</span>)<br>    r = 10 / 0<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;result:&#x27;</span>, r)<br>except ZeroDivisionError as e:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;except:&#x27;</span>, e)<br>finally:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;finally...&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;END&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p><strong>记录错误</strong></p>
+<p>记录错误：<code>logging</code>模块（使用<code>logging</code>模块，程序打印完错误信息后会继续执行，并正常退出）</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-comment"># err_logging.py</span><br><br><span class="hljs-keyword">import</span> logging<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">foo</span>(<span class="hljs-params">s</span>):<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">10</span> / <span class="hljs-built_in">int</span>(s)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">bar</span>(<span class="hljs-params">s</span>):<br>    <span class="hljs-keyword">return</span> foo(s) * <span class="hljs-number">2</span><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():<br>    <span class="hljs-keyword">try</span>:<br>        bar(<span class="hljs-string">&#x27;0&#x27;</span>)<br>    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>        logging.exception(e)<br><br>main()<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;END&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p><strong>抛出错误</strong></p>
+<p>使用<code>raise</code>语句抛出错误</p>
+<p>因为错误是class，捕获一个错误就是捕获到该class的一个实例。如果要抛出错误，可以根据需要，自定义一个错误的class（或者使用python内置的错误类型：比如<code>ValueError</code>，<code>TypeError</code>），选择好继承关系，然后抛出错误</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">FooError</span>(<span class="hljs-title class_ inherited__">ValueError</span>):<br>    <span class="hljs-keyword">pass</span><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">foo</span>(<span class="hljs-params">s</span>):<br>    n = <span class="hljs-built_in">int</span>(s)<br>    <span class="hljs-keyword">if</span> n==<span class="hljs-number">0</span>:<br>        <span class="hljs-keyword">raise</span> FooError(<span class="hljs-string">&#x27;invalid value: %s&#x27;</span> % s)<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">10</span> / n<br><br>foo(<span class="hljs-string">&#x27;0&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<h3 id="1-12-2-调试"><a href="#1-12-2-调试" class="headerlink" title="1.12.2 调试"></a>1.12.2 调试</h3><ul>
+<li><p><code>assert</code>：断音</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">foo</span>(<span class="hljs-params">s</span>):<br>    n = <span class="hljs-built_in">int</span>(s)<br>    <span class="hljs-keyword">assert</span> n != <span class="hljs-number">0</span>, <span class="hljs-string">&#x27;n is zero!&#x27;</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">10</span> / n<br><br>foo(<span class="hljs-string">&#x27;0&#x27;</span>) <span class="hljs-comment">#AssertionError: n is zero!</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><code>logging</code>:不会抛出错误，而且可以输出文件</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">import</span> logging<br>logging.basicConfig(level=logging.INFO)<br><br>s = <span class="hljs-string">&#x27;0&#x27;</span><br>n = <span class="hljs-built_in">int</span>(s)<br>logging.info(<span class="hljs-string">&#x27;n = %d&#x27;</span> % n)<br><span class="hljs-built_in">print</span>(<span class="hljs-number">10</span> / n)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><code>pdb</code>：</p>
+<ul>
+<li>启动<code>pdb</code>命令：<code> python -m pdb err.py</code></li>
+<li>定位到代码：输入代码块</li>
+<li>查看代码：<code>list</code></li>
+<li>单步执行代码：<code>n</code></li>
+<li>查看变量：<code>p 变量名</code></li>
+<li>结束调试：<code>q</code></li>
+</ul>
+</li>
+<li><p><code>pdb.set_trace()</code>:在可能出错的地方放一个<code>pdb.set_trace()</code>，就可以设置一个断点：</p>
+<ul>
+<li>查看变量：<code>p</code></li>
+<li>继续运行：<code>c</code></li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-comment"># err.py</span><br><span class="hljs-keyword">import</span> pdb<br><br>s = <span class="hljs-string">&#x27;0&#x27;</span><br>n = <span class="hljs-built_in">int</span>(s)<br>pdb.set_trace() <span class="hljs-comment"># 运行到这里会自动暂停</span><br><span class="hljs-built_in">print</span>(<span class="hljs-number">10</span> / n)<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="1-13-文件IO"><a href="#1-13-文件IO" class="headerlink" title="1.13 文件IO"></a>1.13 文件IO</h2><h3 id="1-13-1-文件读写"><a href="#1-13-1-文件读写" class="headerlink" title="1.13.1 文件读写"></a>1.13.1 文件读写</h3><p>python文件读写类似c语言</p>
+<ul>
+<li><p>打开文件：<code>open(&#39;xxPath&#39;,&#39;xxMode&#39;)</code></p>
+</li>
+<li><p>读文件：</p>
+<ul>
+<li><code>read()</code>：一次性读取</li>
+<li><code>read(size)</code></li>
+<li><code>readline()</code>:可以每次读取一行内容</li>
+<li><code>readlines()</code>:一次读取所有内容并按行返回<code>list</code></li>
+</ul>
+</li>
+<li><p>写文件：</p>
+</li>
+<li><p>关闭文件：<code>close()</code></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs py">f=<span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;test.txt&#x27;</span>,<span class="hljs-string">&#x27;r&#x27;</span>)<br><span class="hljs-built_in">print</span>(f)<br><span class="hljs-built_in">print</span>(f.read())<br>f.close()<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><code>with ... as f:</code>:在<code>with</code>语句里会自动调用<code>close()</code>方法</p>
+</li>
+<li><p>读取二进制文件：<code>open(&#39;xxPath&#39;,&#39;rb&#39;)</code></p>
+</li>
+<li><p>读取非UTF-8编码的文件：<code>open(&#39;xxPath&#39;,&#39;xxMode&#39;,encoding=&#39;xx编码&#39;)</code></p>
+<ul>
+<li><code>errors=&#39;ignore&#39;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="1-13-2-内存读写"><a href="#1-13-2-内存读写" class="headerlink" title="1.13.2 内存读写"></a>1.13.2 内存读写</h3><p><strong>读写<code>str</code></strong></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">from</span> io <span class="hljs-keyword">import</span> StringIO<br><br>f = StringIO()<br>f.write(<span class="hljs-string">&#x27;world!&#x27;</span>)<br><span class="hljs-built_in">print</span>(f.getvalue()) <span class="hljs-comment">#getvalue()方法用于获得写入后的str。</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>操作二进制数据</strong></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">from</span> io <span class="hljs-keyword">import</span> BytesIO<br><br>f = BytesIO()<br>f.write(<span class="hljs-string">&#x27;中文&#x27;</span>.encode(<span class="hljs-string">&#x27;utf-8&#x27;</span>))<br><span class="hljs-built_in">print</span>(f.getvalue())<br></code></pre></td></tr></table></figure>
+
+<h3 id="1-13-3-操作文件和目录"><a href="#1-13-3-操作文件和目录" class="headerlink" title="1.13.3 操作文件和目录"></a>1.13.3 操作文件和目录</h3><ul>
+<li>操作系统类型：<code>os.name </code></li>
+<li>环境变量：<code>os.environ</code></li>
+<li>获取某个环境变量的值: <code>os.environ.get(&#39;key&#39;)</code></li>
+<li>查看当前目录的绝对路径：<code>os.path.abspath(&#39;.&#39;)</code></li>
+<li>合并路径：<code>os.path.join()</code></li>
+<li>创建目录：<code>os.mkdir()</code></li>
+<li>删除目录: <code>os.rmdir()</code></li>
+<li>拆分路径为两部分，后一部分总是最后级别的目录或文件名：<code>os.path.split()</code></li>
+<li>获取文件扩展名：<code>os.path.splitext()</code></li>
+</ul>
+<h3 id="1-13-4-序列化"><a href="#1-13-4-序列化" class="headerlink" title="1.13.4 序列化"></a>1.13.4 序列化</h3><p>序列化：把变量从内存中变成可存储或传输的过程</p>
+<p>Python提供了<code>pickle</code>模块来实现序列化。</p>
+<ul>
+<li>把任意对象序列化成一个<code>bytes</code>：<code>pickle.dumps()</code></li>
+<li>把对象序列化后写入一个file-like Object：<code>pickle.dump()</code></li>
+<li>反序列化出对象：<code>pickle.loads()</code></li>
+<li>从一个<code>file-like Object</code>中直接反序列化出对象：<code>pickle.load()</code></li>
+</ul>
+<p>Python内置的<code>json</code>模块提供了非常完善的Python对象到JSON格式的转换</p>
+<ul>
+<li><p><code>json.dumps()</code></p>
+</li>
+<li><p><code>json.dump()</code></p>
+</li>
+<li><p><code>json.loads()</code></p>
+</li>
+<li><p><code>json.load()</code></p>
+</li>
+<li><p>进阶：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span>(<span class="hljs-title class_ inherited__">object</span>):<br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name, age, score</span>):<br>    self.name = name<br>    self.age = age<br>    self.score = score<br><br>s = Student(<span class="hljs-string">&#x27;Bob&#x27;</span>, <span class="hljs-number">20</span>, <span class="hljs-number">88</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">student2dict</span>(<span class="hljs-params">std</span>):<br>  <span class="hljs-keyword">return</span> &#123;<br>    <span class="hljs-string">&#x27;name&#x27;</span>: std.name,<br>    <span class="hljs-string">&#x27;age&#x27;</span>: std.age,<br>    <span class="hljs-string">&#x27;score&#x27;</span>: std.score<br>  &#125;<br><br><span class="hljs-built_in">print</span>(json.dumps(s, default=student2dict))<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="1-14-进程和线程"><a href="#1-14-进程和线程" class="headerlink" title="1.14 进程和线程"></a>1.14 进程和线程</h2><h3 id="1-14-1-多进程"><a href="#1-14-1-多进程" class="headerlink" title="1.14.1 多进程"></a>1.14.1 多进程</h3><ul>
+<li><p><code>linux</code>:</p>
+<ul>
+<li><p>创建子进程：<code>os.fork()</code></p>
+</li>
+<li><p>获取进程id：<code>os.getpid()</code></p>
+<p>获取父进程id：<code>os.getppid()</code></p>
+</li>
+</ul>
+</li>
+<li><p><code>windows</code>:由于Windows没有<code>fork</code>调用,所以使用<code>multiprocessing</code>模块(跨平台版本的多进程模块。)</p>
+<ul>
+<li><p>创建子进程时，只需要传入一个执行函数和函数的参数，创建一个<code>Process</code>实例，用<code>start()</code>方法启动。</p>
+</li>
+<li><p><code>join()</code>方法可以等待子进程结束后再继续往下运行，通常用于进程间的同步。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">from</span> multiprocessing <span class="hljs-keyword">import</span> Process<br><span class="hljs-keyword">import</span> os<br><br><span class="hljs-comment"># 子进程要执行的代码</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">run_proc</span>(<span class="hljs-params">name</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Run child process %s (%s)...&#x27;</span> % (name, os.getpid()))<br><br><span class="hljs-keyword">if</span> __name__==<span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Parent process %s.&#x27;</span> % os.getpid())<br>    p = Process(target=run_proc, args=(<span class="hljs-string">&#x27;test&#x27;</span>,))<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Child process will start.&#x27;</span>)<br>    p.start()<br>    p.join()<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Child process end.&#x27;</span>)<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>线程池：<code>Pool</code></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">from</span> multiprocessing <span class="hljs-keyword">import</span> Pool<br><span class="hljs-keyword">import</span> os, time, random<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">long_time_task</span>(<span class="hljs-params">name</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Run task %s (%s)...&#x27;</span> % (name, os.getpid()))<br>    start = time.time()<br>    time.sleep(random.random() * <span class="hljs-number">3</span>)<br>    end = time.time()<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Task %s runs %0.2f seconds.&#x27;</span> % (name, (end - start)))<br><br><span class="hljs-keyword">if</span> __name__==<span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Parent process %s.&#x27;</span> % os.getpid())<br>    p = Pool(<span class="hljs-number">4</span>)<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">5</span>):<br>        p.apply_async(long_time_task, args=(i,))<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Waiting for all subprocesses done...&#x27;</span>)<br>    p.close()<br>    p.join()<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;All subprocesses done.&#x27;</span>)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>进程通信：<code>Queue()</code></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">from</span> multiprocessing <span class="hljs-keyword">import</span> Process, Queue<br><span class="hljs-keyword">import</span> os, time, random<br><br><span class="hljs-comment"># 写数据进程执行的代码:</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">write</span>(<span class="hljs-params">q</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Process to write: %s&#x27;</span> % os.getpid())<br>    <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> [<span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;B&#x27;</span>, <span class="hljs-string">&#x27;C&#x27;</span>]:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Put %s to queue...&#x27;</span> % value)<br>        q.put(value)<br>        time.sleep(random.random())<br><br><span class="hljs-comment"># 读数据进程执行的代码:</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">read</span>(<span class="hljs-params">q</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Process to read: %s&#x27;</span> % os.getpid())<br>    <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>        value = q.get(<span class="hljs-literal">True</span>)<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Get %s from queue.&#x27;</span> % value)<br><br><span class="hljs-keyword">if</span> __name__==<span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    <span class="hljs-comment"># 父进程创建Queue，并传给各个子进程：</span><br>    q = Queue()<br>    pw = Process(target=write, args=(q,))<br>    pr = Process(target=read, args=(q,))<br>    <span class="hljs-comment"># 启动子进程pw，写入:</span><br>    pw.start()<br>    <span class="hljs-comment"># 启动子进程pr，读取:</span><br>    pr.start()<br>    <span class="hljs-comment"># 等待pw结束:</span><br>    pw.join()<br>    <span class="hljs-comment"># pr进程里是死循环，无法等待其结束，只能强行终止:</span><br>    pr.terminate()<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="1-14-2-多线程"><a href="#1-14-2-多线程" class="headerlink" title="1.14.2 多线程"></a>1.14.2 多线程</h3><p>Python的标准库提供了两个模块：<code>_thread</code>和<code>threading</code>，<code>_thread</code>是低级模块，<code>threading</code>是高级模块，对<code>_thread</code>进行了封装。</p>
+<ul>
+<li><p>创建线程：<code>threading.Thread(target=xxFunc,name=&#39;xx&#39;)</code></p>
+</li>
+<li><p>获取当前线程信息：<code>threading.current_thread()</code></p>
+</li>
+<li><p>线程锁</p>
+<ul>
+<li><p>创建线程锁：<code>lock = threading.Lock()</code></p>
+</li>
+<li><p>获取锁：<code>lock.require()</code></p>
+</li>
+<li><p>释放锁: <code>lock.release</code></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs py">balance = <span class="hljs-number">0</span><br>lock = threading.Lock()<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">run_thread</span>(<span class="hljs-params">n</span>):<br>  <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">100000</span>):<br>    <span class="hljs-comment"># 先要获取锁:</span><br>    lock.acquire()<br>    <span class="hljs-keyword">try</span>:<br>      <span class="hljs-comment"># 放心地改吧:</span><br>      change_it(n)<br>    <span class="hljs-keyword">finally</span>:<br>      <span class="hljs-comment"># 改完了一定要释放锁:</span><br>      lock.release()<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">change_it</span>(<span class="hljs-params">n</span>):<br>  <span class="hljs-comment"># 先存后取，结果应该为0:</span><br>  <span class="hljs-keyword">global</span> balance<br>  balance = balance + n<br>  balance = balance - n<br><br>t1 = threading.Thread(target=run_thread, args=(<span class="hljs-number">5</span>,))<br>t2 = threading.Thread(target=run_thread, args=(<span class="hljs-number">8</span>,))<br>t1.start()<br>t2.start()<br>t1.join()<br>t2.join()<br><span class="hljs-built_in">print</span>(balance)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><code>ThreadLocal:</code>一个全局变量，每个线程却可以利用它来保存属于自己的私有数据</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs py">local_school=threading.local()<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">process_student</span>():<br>  std=local_school.student<br>  <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;hello %s (in %s)&#x27;</span>%(std,threading.current_thread().name))<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">process_thread</span>(<span class="hljs-params">name</span>):<br>  local_school.student=name<br>  process_student()<br>  <br>t1=threading.Thread(target=process_thread,args=(<span class="hljs-string">&#x27;bob&#x27;</span>,),name=<span class="hljs-string">&#x27;bob_thread&#x27;</span>)<br>t1.start()<br>t1.join()<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="1-15-异步IO"><a href="#1-15-异步IO" class="headerlink" title="1.15 异步IO"></a>1.15 异步IO</h2><ul>
+<li><p><code>asyncio</code>:<code>asyncio</code>的编程模型就是一个消息循环。我们从<code>asyncio</code>模块中直接获取一个<code>EventLoop</code>的引用，然后把需要执行的协程扔到<code>EventLoop</code>中执行，就实现了异步IO。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">import</span> threading<br><span class="hljs-keyword">import</span> asyncio<br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">hello</span>():<br>  <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;hello world (%s)&#x27;</span> % threading.currentThread())<br>  <span class="hljs-keyword">await</span> asyncio.sleep(<span class="hljs-number">1</span>)<br>  <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;hello again (%s)&#x27;</span> % threading.currentThread())<br><br>loop = asyncio.get_event_loop()<br>tasks = [hello(), hello()]<br>loop.run_until_complete(asyncio.wait(tasks))<br>loop.close()<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="1-xx-正则表达式"><a href="#1-xx-正则表达式" class="headerlink" title="1.xx 正则表达式"></a>1.xx 正则表达式</h2><p>正则表达式是使用反斜杠<code>\</code>作为匹配工具的字符串</p>
+<ul>
+<li><p><code>.</code>：可以匹配任意字符</p>
+</li>
+<li><p><code>*</code>：表示任意个字符（包括0个）</p>
+</li>
+<li><p><code>+</code>：表示至少一个字符</p>
+</li>
+<li><p><code>?</code>：表示0个或1个字符</p>
+</li>
+<li><p><code>&#123;n&#125;</code>：表示n个字符</p>
+</li>
+<li><p><code>&#123;n,m&#125;</code>：表示n-m个字符：</p>
+</li>
+<li><p><code>\d</code>:表示匹配数字</p>
+</li>
+<li><p><code>\w</code>: 表示匹配字母</p>
+</li>
+<li><p><code>\s</code>：可以匹配一个空格（也包括Tab等空白符</p>
+</li>
+<li><p><code>\_</code>：<code>\</code>+特殊字符，表示匹配该特殊字符</p>
+</li>
+<li><p><code>^</code>：表示行的开头，<code>^\d</code>表示必须以数字开头。</p>
+</li>
+<li><p><code>$</code>：表示行的结束，<code>\d$</code>表示必须以数字结束。</p>
+</li>
+<li><p><code>A|B</code>：可以匹配A或B</p>
+</li>
+<li><p><code>[]</code>: 可以表示匹配范围，</p>
+<ul>
+<li><code>[0-9a-zA-Z\_]</code>可以匹配一个数字、字母或者下划线；</li>
+</ul>
+</li>
+<li><p><code>()</code>: 可用于分组提取子串</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs py">m=re.<span class="hljs-keyword">match</span>(<span class="hljs-string">r&#x27;^(\d&#123;3&#125;)-(\d&#123;3,8&#125;)$&#x27;</span>,<span class="hljs-string">&#x27;010-12345&#x27;</span>)<br><span class="hljs-built_in">print</span>(m.group(<span class="hljs-number">0</span>))<br><span class="hljs-built_in">print</span>(m.group(<span class="hljs-number">1</span>))<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>在Python中使用<code>re</code>模块，来使用正则表达式</p>
+<ul>
+<li><p><code>re.match()</code></p>
+</li>
+<li><p><code>re.splict()</code>: 可用与切分字符串</p>
+<ul>
+<li><code>re.split(r&#39;[\s\,]+&#39;, &#39;a,b, c  d&#39;)</code></li>
+</ul>
+</li>
+<li><p>贪婪匹配：正则匹配默认是贪婪匹配，也就是匹配尽可能多的字符</p>
+<ul>
+<li>如<code>\d+</code>采用贪婪匹配，加<code>?</code>可以让<code>\d+</code>采用非贪婪匹配：<code>\d+?</code></li>
+</ul>
+</li>
+<li><p><code>rm.compiler()</code>: 编译后生成Regular Expression对象</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs py">re_telephone = re.<span class="hljs-built_in">compile</span>(<span class="hljs-string">r&#x27;^(\d&#123;3&#125;)-(\d&#123;3,8&#125;)$&#x27;</span>)<br>re_telephone.<span class="hljs-keyword">match</span>(<span class="hljs-string">&#x27;010-12345&#x27;</span>).groups()<br></code></pre></td></tr></table></figure></li>
+</ul>
 
                 
               </div>
