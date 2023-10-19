@@ -1,0 +1,1499 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/banshee_avator.png">
+  <link rel="icon" href="/img/banshee_avator.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="JasmineChen">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="数据库第一章 数据库概论数据库是一种依照特定数据模型组织、存储和管理数据的文件集合。这些文件一般存放在外部存储器中，以便长久保存数据，并可快速访问 数据模型数据模型是指描述事物对象的数据结构组成、数据语义联系、数据约束的抽象结构及其说明  数据结构：用于描述事物对象的静态特征，包括事务对象的数据组成、数据类型、数据性质等 数据操作：用于描述事务对象的动态特征，包括数据的插入、修改、删除和查询等操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库-总结">
+<meta property="og:url" content="http://example.com/2023/10/19/%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="JasmineChen&#39;s Blog">
+<meta property="og:description" content="数据库第一章 数据库概论数据库是一种依照特定数据模型组织、存储和管理数据的文件集合。这些文件一般存放在外部存储器中，以便长久保存数据，并可快速访问 数据模型数据模型是指描述事物对象的数据结构组成、数据语义联系、数据约束的抽象结构及其说明  数据结构：用于描述事物对象的静态特征，包括事务对象的数据组成、数据类型、数据性质等 数据操作：用于描述事务对象的动态特征，包括数据的插入、修改、删除和查询等操作">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="e:\typora-user-images\image-20220528142715579.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220528142731229.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220528142752082.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220528142806978.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220528143042451.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220528143152898.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220528143359107.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220528144314414.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220528153017343.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220528153050135.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220528153105536.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220528153119557.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220528153434343.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220528153827740.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220528161913181.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220528161927311.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220528161956634.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220528162040964.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220528162125039.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220529112740146.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220529113003762.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220529145948199.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220529150024453.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220529151200063.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220529204032657.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220529230344578.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220529230456852.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220529230832075.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220529230909364.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220529230928790.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220529231838610.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220529232418408.png">
+<meta property="article:published_time" content="2023-10-19T01:45:53.000Z">
+<meta property="article:modified_time" content="2023-10-19T01:48:22.052Z">
+<meta property="article:author" content="JasmineChen">
+<meta property="article:tag" content="数据库">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="e:\typora-user-images\image-20220528142715579.png">
+  
+  
+  
+  <title>数据库-总结 - JasmineChen&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>JasmineChen&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/00R.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="数据库-总结"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-10-19 09:45" pubdate>
+          2023年10月19日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          16k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          133 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">数据库-总结</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="第一章-数据库概论"><a href="#第一章-数据库概论" class="headerlink" title="第一章 数据库概论"></a>第一章 数据库概论</h2><p>数据库是一种依照特定数据模型组织、存储和管理数据的文件集合。这些文件一般存放在外部存储器中，以便长久保存数据，并可快速访问</p>
+<h3 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h3><p>数据模型是指描述事物对象的数据结构组成、数据语义联系、数据约束的抽象结构及其说明</p>
+<ul>
+<li>数据结构：用于描述事物对象的静态特征，包括事务对象的数据组成、数据类型、数据性质等</li>
+<li>数据操作：用于描述事务对象的动态特征，包括数据的插入、修改、删除和查询等操作</li>
+<li>数据约束：用于描述数据结构中数据之间的语义联系、数据之间的制约和依存关系，以及数据动态变化的规则等。</li>
+</ul>
+<p>包括层次、网状、关系、其他（对象、键值对、列式、文档、图形）数据模型。</p>
+<h3 id="数据库系统"><a href="#数据库系统" class="headerlink" title="数据库系统"></a>数据库系统</h3><p>数据库系统是一类基于数据库进行数据管理与信息服务的软件系统,由用户，数据库应用程序、数据库管理系统和数据库四个部分组成。</p>
+<ul>
+<li>数据库应用程序是一种在DBMS下对数据库中数据进行访问处理的应用程序</li>
+<li>数据库管理系统是一种专门用来创建数据库、管理数据库、维护数据库，并提供外部对数据库进行访问的系统软件</li>
+</ul>
+<h3 id="数据管理技术发展阶段"><a href="#数据管理技术发展阶段" class="headerlink" title="数据管理技术发展阶段"></a>数据管理技术发展阶段</h3><ul>
+<li><p>人工管理阶段（1940-1950）</p>
+<p>• 程序员组织与管理数据</p>
+<p>• 应用程序依赖数据集</p>
+<p>• 应用之间无数据共享、数据冗余度大</p>
+<p>• 数据集无结构</p>
+</li>
+<li><p>文件管理阶段（1950末-60中）</p>
+<p>•由文件组织与存储数据</p>
+<p>•数据文件的数据记录具有简单的字段结构，但文件整体无结构</p>
+<p>•应用程序依赖于数据文件，需自己维护数据文件</p>
+<p>•数据独立性差，难以实现应用程序之间的数据共享访问</p>
+</li>
+<li><p>数据库系统管理节段（1960末-现在）</p>
+<p>•数据集结构化，易于查询与统计处理</p>
+<p>•不同应用程序可以实现数据共享访问</p>
+<p>•数据独立性高，应用可扩展</p>
+<p>•数据由DBMS统一管理和操作访问</p>
+</li>
+</ul>
+<h3 id="数据库应用系统类型"><a href="#数据库应用系统类型" class="headerlink" title="数据库应用系统类型"></a>数据库应用系统类型</h3><ul>
+<li><p>业务处理系统（商业终端销售系统、航空机票订票系统、酒店系统等）</p>
+<p>是运用数据库应用程序对机构业务活动信息进行记录、计算、检索、汇总、统计等数据处理，为机构操作层面提供基本业务服务，提高业务处理效率的信息系统</p>
+</li>
+<li><p>管理信息系统（人力资源管理信息系统、办公管理信息系统等）</p>
+<p>是一种以机构职能管理为主导，以及计算机软硬件、网络通信、数据库等IT技术，实现机构职能信息化管理，以达到规范化管理和提高机构工作效率，并支持机构职能服务的信息系统。</p>
+</li>
+<li><p>决策支持系统（电信营销大数据决策系统、证券分析与辅助决策信息系统等）</p>
+<p>是以管理科学、运筹学、控制论和行为科学为基础，以计算机技术、数据库技术、人工智能技术为手段，针对特定领域问题解决，为管理者提供辅助决策服务与方案的信息系统。</p>
+</li>
+</ul>
+<h3 id="数据库系统应用结构"><a href="#数据库系统应用结构" class="headerlink" title="数据库系统应用结构"></a>数据库系统应用结构</h3><ul>
+<li><p>单机用户结构</p>
+</li>
+<li><p>集中式结构</p>
+<p>特点: 数据库系统的应用程序、DBMS、数据，都部署在同一服务器上运行，多个用户使用自己的计算机终端网络连接服务器，并可实现共享访问数据库。<br>优缺点: 结构简单，易于维护，但是当终端用户增加到一定数量后，服务器及网络将成为数据存取访问的瓶颈，使系统的性能大大地降低。</p>
+</li>
+<li><p>客户&#x2F;服务器结构</p>
+<p>特点:数据库应用系统的数据集中在数据库服务器管理、应用分布客户机处理。客户端应用程序通过网络并发访问数据库服务器中的数据库。<br>优缺点:在客户&#x2F;服务器结构系统中，客户机程序与数据库服务器分工进行数据处理，提高了系统的负载分担能力，但仍会因大量客户端并发访问数据库服务器，导致系统性能瓶颈。</p>
+</li>
+<li><p>分布式结构</p>
+<p>特点：分布式结构的数据库系统既实现数据分布，又实现处理分布。分布式数据库系统的各服务器结点数据库在逻辑上是一个整体，但物理分布在计算机网络的不同服务器结点上运行。每个数据库服务器可通过网络既支持多个本地客户机访问，也支持远程客户机访问。网络中的每一个数据库服务器都可以独立地存取与处理数据，并执行全局应用<br>优缺点:分布式结构数据库系统适合跨地区的大型机构及企业等组织对数据库应用的需求，其处理性能强，但数据库的分布处理与维护有一定的开销与技术难度。</p>
+</li>
+</ul>
+<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p>需求分析、系统设计、系统实现、系统测试、系统运行与维护</p>
+<h2 id="第二章-关系模型"><a href="#第二章-关系模型" class="headerlink" title="第二章 关系模型"></a>第二章 关系模型</h2><p>由埃德加 科隆提出<br>关系模型以关系代数理论为基础，将数据操作抽象为管理处理，其关系表结构简单，便于理解和访问。</p>
+<h3 id="实体、关系的概念"><a href="#实体、关系的概念" class="headerlink" title="实体、关系的概念"></a>实体、关系的概念</h3><ul>
+<li><p>实体</p>
+<p>指包含由数据特征的事务对象在概念模型世界中的抽象名称</p>
+</li>
+<li><p>关系</p>
+<p>在关系模型中，使用关系来存储实体中的数据。<br>关系是指具有关系特征、用于存放实体数据的二维表。关系也常被称为关系表。</p>
+</li>
+<li><p>关系特征</p>
+<p>• 表中每行存储实体的一个实例数据<br>• 表中每列包含实体的一项属性数据<br>• 表中单元格只能存储单个值<br>• 不允许有重复的行<br>• 不允许有重复的列<br>• 列顺序可任意<br>• 行顺序可任意</p>
+</li>
+</ul>
+<h4 id="关系键、关系模式"><a href="#关系键、关系模式" class="headerlink" title="关系键、关系模式"></a>关系键、关系模式</h4><p>在关系中，可以用来唯一标识元组的属性列，称为键，其他属性列都为非键列。</p>
+<p>复合键：是指关系中用来唯一标识元组的多列作为键。</p>
+<p>候选键：关系中可能由多个列均适合作为建，将其中每个都称为候选键。</p>
+<p>主键：关系表中最有代表性的一个候选键，每个关系表只能定义一个主键。• 唯一标识关系表的每行（元组）</p>
+<p>• 与关联表的外键建立联系，实现关系表之间连接</p>
+<p>• 数据库文件使用主键值来组织关系表的数据存储</p>
+<p>• 数据库使用主键索引快速检索数据</p>
+<p>代理键：采用DBMS自动生成的数字序列作为关系表的主键。</p>
+<ul>
+<li>用途：由DBMS自动生成的数字序列作为主键，可替代复合主键，以便获得更高性能的数据访问操作处理。</li>
+<li>说明：代理键是较短的数字，并且永远不变；代理键的值对用户没有任何意义，通常需要在表单或报表中隐藏它们。</li>
+</ul>
+<h3 id="关系模型原理"><a href="#关系模型原理" class="headerlink" title="关系模型原理"></a>关系模型原理</h3><p>关系模型是一种基于二维表结构存储数据实体及实体间联系的数据模型</p>
+<ul>
+<li><p>数据操作：包括选择（select）、投影（project）、连接（join）、除（Divide）、并（union）、交（intersection）、差（difference）等，也包含插入（Insert）、更新（Update）、删除（Delete）等数据操纵。</p>
+</li>
+<li><p>数据关系约束：包括实体完整性约束、参照完整性约束和用户自定义完整性约束。</p>
+<p>• 属性列取值类型<br>• 属性列取值范围<br>• 属性列取值是否唯一<br>• 属性列是否允许空值<br>• 关联表的参照完整性约束</p>
+<h4 id="关系模型数据操作"><a href="#关系模型数据操作" class="headerlink" title="关系模型数据操作"></a>关系模型数据操作</h4></li>
+<li><p>并运算∪</p>
+</li>
+<li><p>差运算—</p>
+<p>R-S由属于R，而不属于S的所有元组组成。</p>
+</li>
+<li><p>交运算∩</p>
+</li>
+<li><p>笛卡尔积x<br>R×S由所有属于R的元组与所有属于S的元组进行组合而成。</p>
+</li>
+</ul>
+<p>专门的关系运算操作</p>
+<ul>
+<li><p>选择运算<br><img src="E:\typora-user-images\image-20220528142715579.png" srcset="/img/loading.gif" lazyload alt="image-20220528142715579"></p>
+<p><img src="E:\typora-user-images\image-20220528142731229.png" srcset="/img/loading.gif" lazyload alt="image-20220528142731229"></p>
+</li>
+<li><p>投影运算</p>
+<p><img src="E:\typora-user-images\image-20220528142752082.png" srcset="/img/loading.gif" lazyload alt="image-20220528142752082"><br><img src="E:\typora-user-images\image-20220528142806978.png" srcset="/img/loading.gif" lazyload alt="image-20220528142806978"></p>
+</li>
+<li><p>连接运算</p>
+<p>θ连接：是从R和S的笛卡尔积中选择R关系在A属性组上的值与S<br>关系在B属性组上的值满足比较关系θ的元组集合，组成新的关系。<br><img src="E:\typora-user-images\image-20220528143042451.png" srcset="/img/loading.gif" lazyload alt="image-20220528143042451"></p>
+<p>自然连接</p>
+<p><img src="E:\typora-user-images\image-20220528143152898.png" srcset="/img/loading.gif" lazyload alt="image-20220528143152898"></p>
+<p>外连接——左外连接、右外连接、全外连接</p>
+</li>
+<li><p>除运算<br><img src="E:\typora-user-images\image-20220528143359107.png" srcset="/img/loading.gif" lazyload alt="image-20220528143359107"></p>
+</li>
+</ul>
+<h4 id="完整性约束"><a href="#完整性约束" class="headerlink" title="完整性约束"></a>完整性约束</h4><p>关系模型完整性是指在关系数据模型中对关系实施的完整性约束</p>
+<ul>
+<li><p>作用</p>
+<p>• 消除关系表的元组重复存储</p>
+<p>• 保持关联表的数据一致性</p>
+<p>• 实现业务数据规则</p>
+</li>
+<li><p>关系模型完整性约束组成</p>
+<ul>
+<li><p>实体完整性约束<br>是指在关系表中试试的主键取值约束，以保证关系表中的每一个元组可以被唯一标识<br>约束规则：</p>
+<ul>
+<li>主键属性列都不允许为空值（NULL）</li>
+<li>主键取值唯一，并区分关系表中的每个元组</li>
+</ul>
+</li>
+<li><p>参照完整性约束<br>是指关系表之间需要遵守的数据约束，一保证关系之间关联列的数据一致性<br>约束规则：</p>
+<ul>
+<li>关系R中的外键F与关系S中的主键K相关联，则R中外键F值必须与S中主键K值一致</li>
+</ul>
+<p>参照完整性检查：</p>
+</li>
+</ul>
+<p><img src="E:\typora-user-images\image-20220528144314414.png" srcset="/img/loading.gif" lazyload alt="image-20220528144314414"></p>
+<ul>
+<li>用户自定义完整性约束<br>是指用户根据具体业务对数据处理规则要求所定义的数据约束<ul>
+<li>定义列的数据类型与取值范围</li>
+<li>定义列的缺省值</li>
+<li>定义列是否允许取空值</li>
+<li>定义列取值唯一性</li>
+<li>定义列之间的数据依赖性</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="第三章-SQL语言"><a href="#第三章-SQL语言" class="headerlink" title="第三章 SQL语言"></a>第三章 SQL语言</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>SQL是一种对关系数据库进行访问的数据操作语言</p>
+<p>语言特点：</p>
+<ul>
+<li>一体化</li>
+<li>使用方式灵活</li>
+<li>非过程化</li>
+<li>语言语句简单</li>
+</ul>
+<p>主要操作功能：</p>
+<ul>
+<li>数据库对象创建、修改、删除</li>
+<li>数据库表的数据插入、修改、删除、查询、统计</li>
+<li>存储过程、触发器、函数等程序执行</li>
+<li>数据库权限、角色、用户等管理</li>
+</ul>
+<p>语言语句类型</p>
+<ul>
+<li><p>数据定义语言</p>
+<ul>
+<li>CREATE DATABASE - 创建新数据库</li>
+<li>DROP DATABASE</li>
+<li>ALTER DATABASE</li>
+<li>CREATE TABLE - 创建新表</li>
+<li>ALTER TABLE</li>
+<li>DROP TABLE</li>
+<li>CREATE INDEX-创建索引</li>
+<li>DROP INDEX</li>
+</ul>
+</li>
+<li><p>数据操纵语言</p>
+<ul>
+<li>INSERT</li>
+<li>UPDATE </li>
+<li>DELETE</li>
+</ul>
+</li>
+<li><p>数据查询语言</p>
+<ul>
+<li>SELETE</li>
+</ul>
+</li>
+<li><p>数据控制语言</p>
+<ul>
+<li>GRANT</li>
+<li>DENY</li>
+<li>REVOKE</li>
+</ul>
+</li>
+<li><p>事务处理语言</p>
+<ul>
+<li>BEGIN TRANSACTION-开始事务</li>
+<li>COMMIT-提交事务</li>
+<li>ROLLBACK-回滚事务</li>
+</ul>
+</li>
+<li><p>游标控制语言</p>
+<ul>
+<li>DECLARE CURSOR-定义游标</li>
+<li>FETCH INTO-提交游标数据</li>
+<li>CLOSE CURSOR-关闭游标</li>
+</ul>
+</li>
+</ul>
+<h3 id="数据库创建、修改、删除"><a href="#数据库创建、修改、删除" class="headerlink" title="数据库创建、修改、删除"></a>数据库创建、修改、删除</h3><ul>
+<li><p>执行SQL语句创建一个选课管理数据库CourseDB<br>CREATE DATABASE CourseDB;</p>
+</li>
+<li><p>将选课管理数据库名称CourseDB修改为CourseManageDB<br>ALTER DATABASE CourseDB RENAME TO CourseManageDB;</p>
+</li>
+<li><p>删除前面创建的选课管理数据库CourseManageDB<br>DROP DATABASE CourseManageDB；</p>
+</li>
+</ul>
+<h3 id="数据库表创建、修改、删除"><a href="#数据库表创建、修改、删除" class="headerlink" title="数据库表创建、修改、删除"></a>数据库表创建、修改、删除</h3><ul>
+<li><p>创建</p>
+<p>CREATE TABLE &lt;表名&gt;</p>
+<p> （ &lt;列名1&gt; &lt;数据类型&gt; [列完整性约束]，</p>
+<p>  &lt;列名2&gt; &lt;数据类型&gt;  [列完整性约束]， </p>
+<p>  &lt;列名3&gt; &lt;数据类型&gt; [列完整性约束]，</p>
+<p>  …</p>
+<p>  )；</p>
+<p><img src="E:\typora-user-images\image-20220528153017343.png" srcset="/img/loading.gif" lazyload alt="image-20220528153017343"></p>
+<ul>
+<li><p>列完整性约束</p>
+<ul>
+<li><p>RPIMARY KEY-主键</p>
+</li>
+<li><p>NULL&#x2F;NOT NULL-空值&#x2F;非空值</p>
+</li>
+<li><p>UNIQUE-值唯一</p>
+<p><img src="E:\typora-user-images\image-20220528153050135.png" srcset="/img/loading.gif" lazyload alt="image-20220528153050135"></p>
+</li>
+<li><p>CHECK-有效性检查<br><img src="E:\typora-user-images\image-20220528153105536.png" srcset="/img/loading.gif" lazyload alt="image-20220528153105536"></p>
+</li>
+<li><p>DEFAULT-缺省值<br><img src="E:\typora-user-images\image-20220528153119557.png" srcset="/img/loading.gif" lazyload alt="image-20220528153119557"></p>
+</li>
+</ul>
+</li>
+<li><p>表约束定义主键<br>CONSTRAINT &lt;主键名&gt; RPIMARY Key（主键列）<br><img src="E:\typora-user-images\image-20220528153434343.png" srcset="/img/loading.gif" lazyload alt="image-20220528153434343"></p>
+</li>
+<li><p>表约束定义代理键</p>
+<p>CONSTRAINT &lt;约束名&gt; RPIMARY Key （代理键列名）</p>
+</li>
+<li><p>表约束定义外键<br>CONSTRAINT &lt;约束名&gt; FOREIGN Key （主键列）<br><img src="E:\typora-user-images\image-20220528153827740.png" srcset="/img/loading.gif" lazyload alt="image-20220528153827740"></p>
+</li>
+</ul>
+</li>
+<li><p>修改</p>
+<ul>
+<li><p>ADD修改方式，用于增加新列或列完整性约束<br>ALTER TABLE &lt;表名&gt; ADD &lt;新列名称&gt;&lt;数据类型&gt;|[完整性约束]；</p>
+</li>
+<li><p>DROP修改方式，用于删除指定列或列的完整性约束条件<br>ALTER TABLE&lt;表名&gt; DROP COLUMN &lt;列名&gt;；<br>ALTER TABLE&lt;表名&gt; DROP CONSTRAINT&lt;完整性约束名&gt;；</p>
+</li>
+<li><p>RENAME修改方式，用于修改表名称，列名称<br>ALTER TABLE &lt;表名&gt; RENAME TO &lt;新表名&gt;；<br>ALTER TABLE &lt;表名&gt; RENAME &lt;原列名&gt; TO &lt;新列名&gt;；</p>
+</li>
+<li><p>ALTER修改方式，用于修改列的数据类型</p>
+<p>ALTER TABLE &lt;表名&gt; ALTER COLUMN &lt;列名&gt; TYPE&lt;新的数据类型&gt;；</p>
+</li>
+</ul>
+</li>
+<li><p>删除<br>DROP TABLE &lt;表名&gt;；</p>
+</li>
+</ul>
+<h3 id="数据库索引创建、修改、删除"><a href="#数据库索引创建、修改、删除" class="headerlink" title="数据库索引创建、修改、删除"></a>数据库索引创建、修改、删除</h3><p>索引是一种按照关系表中指定列的取值顺序存储的数据结构，使用它可以加快表中数据的查询访问。</p>
+<p>作用：支持对数据库表中数据快速查找，其机理类似图书目录可以快速定位章节内容</p>
+<ul>
+<li><p>创建<br>CREATE INDEX &lt;索引名&gt; ON &lt;表名&gt;&lt;（列名）&gt;；</p>
+<ul>
+<li><p>在学生信息表Student中，为出生日期Birthday列创建索引，以便支持按出生日期快速查询学生信息。</p>
+<p>CREATE INDEX Birthday_Idx ON STUDENT （Birthday）；</p>
+</li>
+</ul>
+</li>
+<li><p>修改<br>ALTER INDEX &lt;索引名&gt; &lt;修改项&gt;；<br>ALTER INDEX &lt;索引名&gt; RENAME TO &lt;新索引名&gt;；</p>
+<ul>
+<li><p>在学生信息表Student中，将原索引Birthday_Idx更名为Bday_Idx，其索引修改SQL语句如下：</p>
+<p>ALTER INDEX Birthday_Idx RENAME TO Bday_Idx；</p>
+</li>
+</ul>
+</li>
+<li><p>删除<br>DROP INDEX &lt;索引名&gt; ；</p>
+<ul>
+<li><p>在学生信息表Student中，删除bday_idx索引，其索引删除SQL语句如下：</p>
+<p>DROP INDEX bday_idx；</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="数据操纵语句"><a href="#数据操纵语句" class="headerlink" title="数据操纵语句"></a>数据操纵语句</h3><h4 id="数据插入语句"><a href="#数据插入语句" class="headerlink" title="数据插入语句"></a>数据插入语句</h4><p>INSERT INTO &lt;表名|视图名&gt;[&lt;列名表&gt;] VALUES （列值表）;</p>
+<ul>
+<li><p>在学生信息表Student中，插入一个新的学生数据，如“2017220101105”，“柳因”，“女”，“1999-04-23”，“软件工程”，“<a href="mailto:&#x6c;&#x69;&#x75;&#x79;&#105;&#x6e;&#x40;&#x31;&#54;&#51;&#46;&#99;&#x6f;&#109;">&#x6c;&#x69;&#x75;&#x79;&#105;&#x6e;&#x40;&#x31;&#54;&#51;&#46;&#99;&#x6f;&#109;</a>”。</p>
+<p>INSERT INTO Student VALUES(‘2017220101105’,’柳因’,’女’,’1999-04-23’,’软件工程’, ‘<a href="mailto:&#x6c;&#x69;&#117;&#121;&#x69;&#110;&#64;&#49;&#54;&#x33;&#x2e;&#x63;&#x6f;&#109;">&#x6c;&#x69;&#117;&#121;&#x69;&#110;&#64;&#49;&#54;&#x33;&#x2e;&#x63;&#x6f;&#109;</a>‘);</p>
+</li>
+</ul>
+<h4 id="数据更新语句"><a href="#数据更新语句" class="headerlink" title="数据更新语句"></a>数据更新语句</h4><p>UPDATE &lt;表名|视图名&gt;<br>SET &lt;列名1&gt;&#x3D;&lt;表达式1&gt; [，&lt;列名2&gt;&#x3D;&lt;表达式2&gt;…]<br>[WHERE &lt;条件表达式&gt;]；</p>
+<ul>
+<li><p>在学生信息表Student中，学生“赵东”的原有Email数据为空，现需要修改为“<a href="mailto:&#122;&#x68;&#x61;&#111;&#x64;&#111;&#x6e;&#x67;&#64;&#49;&#x36;&#51;&#x2e;&#99;&#x6f;&#109;">&#122;&#x68;&#x61;&#111;&#x64;&#111;&#x6e;&#x67;&#64;&#49;&#x36;&#51;&#x2e;&#99;&#x6f;&#109;</a>”。</p>
+<p>UPDATE Student<br>SET  Email&#x3D;‘<a href="mailto:&#122;&#x68;&#97;&#111;&#x64;&#x6f;&#x6e;&#x67;&#x40;&#x31;&#x36;&#x33;&#46;&#99;&#x6f;&#109;">&#122;&#x68;&#97;&#111;&#x64;&#x6f;&#x6e;&#x67;&#x40;&#x31;&#x36;&#x33;&#46;&#99;&#x6f;&#109;</a>‘<br>WHERE  StudentName&#x3D;’赵东’;</p>
+</li>
+</ul>
+<h4 id="数据删除语句"><a href="#数据删除语句" class="headerlink" title="数据删除语句"></a>数据删除语句</h4><p>DELETE<br>FROM &lt;表名|视图名&gt;<br>[WHERE  &lt;条件表达式&gt;]；</p>
+<ul>
+<li><p>在学生信息表STUDENT中，删除姓名为 “张亮”的学生数据，其数据删除的SQL语句如下</p>
+<p>DELETE<br>FROM STUDENT<br>WHERE  StudentName&#x3D;’张亮’;</p>
+</li>
+</ul>
+<h3 id="数据查询语句"><a href="#数据查询语句" class="headerlink" title="数据查询语句"></a>数据查询语句</h3><h4 id="单表数据查询"><a href="#单表数据查询" class="headerlink" title="单表数据查询"></a>单表数据查询</h4><p>SELECT ColumnNames<br>FROM  TableName<br>WHERE SomeConditionExits;</p>
+<ul>
+<li><p>使用BETWEEN..AND关键词来限定列值范围，还可以使用关键词LIKE与通配符来限定查询条件。<br><img src="E:\typora-user-images\image-20220528161913181.png" srcset="/img/loading.gif" lazyload alt="image-20220528161913181"></p>
+</li>
+<li><p>使用通配符来限定字符串数据范围。下划线（_）通配符用于代表一个未指定的字符。百分号（%）通配符用于代表一个或多个未指定的字符。<br><img src="E:\typora-user-images\image-20220528161927311.png" srcset="/img/loading.gif" lazyload alt="image-20220528161927311"></p>
+</li>
+<li><p>可以使用多个条件表达式，并通过逻辑运算符（AND、OR、NOT）连接操作，以及使用IN、NOT IN、IS NULL、IS NOT NULL关键词，进一步限定结果集的数据范围。<br><img src="E:\typora-user-images\image-20220528161956634.png" srcset="/img/loading.gif" lazyload alt="image-20220528161956634"></p>
+</li>
+</ul>
+<p>​		<img src="E:\typora-user-images\image-20220528162040964.png" srcset="/img/loading.gif" lazyload alt="image-20220528162040964"></p>
+<p>对结果集进行排序</p>
+<ul>
+<li><p>在SELECT查询语句返回的结果集中,行的顺序是任意的。如果需要结果集排序，可以在SELECT语句中加入ORDER BY关键字。<br><img src="E:\typora-user-images\image-20220528162125039.png" srcset="/img/loading.gif" lazyload alt="image-20220528162125039"></p>
+</li>
+<li><p>ASC和DESC选定排序是升序或降序</p>
+</li>
+</ul>
+<h4 id="内置函数、分组统计"><a href="#内置函数、分组统计" class="headerlink" title="内置函数、分组统计"></a>内置函数、分组统计</h4><p>典型SQL内置函数包括：聚合、算术、字符串、日期时间、数据类型转换函数</p>
+<ul>
+<li><p>聚合函数</p>
+<table>
+<thead>
+<tr>
+<th>聚合函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AVG（）</td>
+<td>计算结果集指定列数据的平均值</td>
+</tr>
+<tr>
+<td>COUNT（）</td>
+<td>计算结果集行数</td>
+</tr>
+<tr>
+<td>MIN（）</td>
+<td>找出结果集指定列数据的最小值</td>
+</tr>
+<tr>
+<td>MAX（）</td>
+<td>找出结果集指定列数据的最小值</td>
+</tr>
+<tr>
+<td>SUM（）</td>
+<td>计算结果集指定列数据的总和</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>统计Student表中的学生人数，在SELECT语句中可以使用COUNT（）函数来计算，其查询SQL语句如下：</p>
+<p>SELECT COUNT（*） AS 学生人数<br>FROM Student;</p>
+</li>
+</ul>
+</li>
+<li><p>分组统计<br>通过在SELECT语句中加入Group By子语句来实现</p>
+<p>SELECT  统计函数（目标列）<br>FROM &lt;表名&gt;<br>[WHERE 条件]<br>GROUP BY &lt;目标列&gt;<br>[Having 条件];</p>
+<ul>
+<li><p>分专业统计Student表中的学生人数。在SELECT语句中可以使用GROUP BY分组子句完成统计，其查询SQL语句如下：</p>
+<p>SELECT Major AS 专业, COUNT（StudentID） AS 学生人数FROM Student<br>GROUP BY Major;</p>
+</li>
+<li><p>若要分专业统计STUDENT表中男生人数，但限定只显示人数大于2的人数，其查询SQL语句如下：</p>
+<p>SELECT Major AS 专业, COUNT（StudentID） AS 学生人数FROM Student<br>WHERE StudentGender&#x3D;’男’<br>GROUP BY Major<br>HAVING COUNT(*)&gt;2;</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="多表关联查询"><a href="#多表关联查询" class="headerlink" title="多表关联查询"></a>多表关联查询</h4><ul>
+<li><p>子查询与多表关联</p>
+<p>SELECT  &lt;目标列&gt;[，&lt;目标列&gt;…]<br>FROM &lt;表名&gt;<br>WHERE &lt;条件中嵌套另一关系表的SELECT 查询结果集&gt;</p>
+<ul>
+<li><p>在选课管理系统数据库中，希望能检索出“计算机学院”的教师名单。该操作需要关联教师信息表Teacher和学院信息表College，才能获得这些数据。这里可采用子查询方法实现两表关联查询，其查询SQL语句如下：</p>
+<p>SELECT TeacherID, TeacherName, TeacherTitle<br>FROM Teacher<br>WHERE CollegeID IN<br>(SELECT CollegeID<br>FROM College<br>   WHERE CollegeName&#x3D;’计算机学院’);</p>
+</li>
+</ul>
+</li>
+<li><p>使用连接关联多表查询</p>
+<p>SELECT  &lt;目标列&gt;[，&lt;目标列&gt;…]<br>FROM &lt;表名1&gt;，&lt;表名2&gt;，…, &lt;表名n&gt;，<br>WHERE &lt;关系表之间的连接关联条件&gt;</p>
+<ul>
+<li><p>在选课管理系统数据库中，希望获得各个学院的教师信息列表，包括学院名称、教师编号、教师姓名、教师性别、职称等信息。要求按学院名称、教师编号分别排序输出，其查询SQL语句如下：</p>
+<p>SELECT B.CollegeName AS 学院名称, A.TeacherID AS 编号, A.TeacherName AS 姓名, A.TeacherGender AS 性别, A. TeacherTitle AS 职称<br>FROM Teacher AS A，College AS B<br>WHERE A.CollegeID&#x3D;B.CollegeID<br>ORDER BY B.CollegeName, A.TeacherID;</p>
+</li>
+</ul>
+</li>
+<li><p>JOIN……on连接查询语句</p>
+<p>SELECT &lt;目标列&gt;[，&lt;目标列&gt;…]<br>FROM &lt;表名1&gt; JOIN &lt;表名2&gt; ON &lt;连接条件&gt;;</p>
+<ul>
+<li><p>在选课管理系统数据库中，希望获得各个学院的教师信息，包括学院名称、教师编号、教师姓名、教师性别、职称等信息。要求按学院名称、教师编号分别排序输出，其查询SQL语句如下：</p>
+<p>SELECT B.CollegeName AS 学院名称, A.TeacherID AS 编号, A.TeacherName AS 姓名, A.TeacherGender AS 性别, A. TeacherTitle AS 职称<br>FROM TEACHER AS A JOIN COLLEGE AS B<br>ON A.CollegeID&#x3D;B.CollegeID<br>ORDER BY B.CollegeName, A.TeacherID;</p>
+</li>
+</ul>
+</li>
+<li><p>外部连接</p>
+<p>LEFT JOIN: 左外连接，即使没有与右表关联列值匹配，也从左表返回所有的行。<br>RIGHT JOIN: 右外连接，即使没有与左表关联列值匹配，也从右表返回所有的行。<br>FULL JOIN: 全外连接，同时进行左连接和右连接，就返回所有行。</p>
+<ul>
+<li><p>在选课管理系统数据库中，希望能查询所有开设课程的学生选课情况，包括课程名称、任课教师、选课学生人数。这需要关联课程信息表COURSE、开课计划表PLAN、教师信息表TEACHER、选课注册信息表REGISTER。若使用左外连接查询，该JOIN…ON连接查询的SQL语句如下：</p>
+<p>SELECT C.CourseName AS 课程名称, T.TeacherName AS 教师, COUNT (R.CoursePlanID) AS 选课人数<br>FROM COURSE AS C JOIN PLAN AS P<br>ON C.CourseID&#x3D;P.CourseID<br>JOIN TEACHER AS T ON P.TeacherID&#x3D;T.TeacherID<br>LEFT JOIN REGISTER AS R ON<br>P.CoursePlanID&#x3D;R.CoursePlanID<br>GROUP BY C.CourseName, T.TeacherName;</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="数据控制语句"><a href="#数据控制语句" class="headerlink" title="数据控制语句"></a>数据控制语句</h3><p>数据控制语句是一种可对用户数据访问全进行控制的操作语句，它可以控制特定用户或角色对数据表、视图、存储过程、触发器等数据库对象的访问权限。</p>
+<ul>
+<li><p>GRANT授权语句</p>
+<p>GRANT &lt;权限列表&gt; ON &lt;数据库对象&gt; TO &lt;用户或角色&gt; [ WITH GRANT OPTION ]；</p>
+<ul>
+<li><p>在选课管理系统数据库中，将课程注册表REGISTER的数据插入、数据修改、数据删除、数据查询访问权限赋予学生角色RoleS。</p>
+<p>GRANT SELECT, INSERT, UPDATE, DELETE ON REGISTER TO RoleS;</p>
+</li>
+</ul>
+</li>
+<li><p>REVOKE授权语句</p>
+<p>REVOKE &lt;权限列表&gt; ON &lt;数据库对象&gt; FROM &lt;用户或角色&gt; ;</p>
+<ul>
+<li><p>在选课管理系统数据库中，收回学生角色RoleS在课程注册表REGISTER的数据删除访问权限。</p>
+<p>REVOKE DELETE ON REGISTER FROM RoleS;</p>
+</li>
+</ul>
+</li>
+<li><p>DENY授权语句</p>
+<p>DENY &lt;权限列表&gt; ON &lt;数据库对象&gt; TO &lt;用户或角色&gt; ;</p>
+<ul>
+<li><p>在选课管理系统数据库中，若拒绝教师角色RoleT对教师表TEACHER的数据删除访问权限</p>
+<p>DENY DELETE ON TEACHER TO RoleT;</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="视图SQL语句"><a href="#视图SQL语句" class="headerlink" title="视图SQL语句"></a>视图SQL语句</h3><p>视图是一种通过基础表或其它视图构建的虚拟表。它本身没有自己的数据，而是使用了存储在基础表中的数据。</p>
+<ul>
+<li><p>创建<br>CREATE VIEW &lt;视图名&gt;[(列名1)，(列名2)，…] AS &lt;SELECT查询&gt;；</p>
+<ul>
+<li><p>在选课管理系统数据库中，若需要建立一个查看基础课数据的视图BasicCourseView，其创建SQL语句如下。</p>
+<p>CREATE VIEW BasicCourseView AS<br>SELECT CourseName, CourseCredit, CoursePeriod, TestMethod<br>FROM  COURSE<br>WHERE CourseType&#x3D;‘基础课’;</p>
+</li>
+</ul>
+</li>
+<li><p>删除<br>DROP VIEW &lt;视图名&gt;；</p>
+</li>
+</ul>
+<p>视图应用</p>
+<ul>
+<li><p>使用视图简化复杂SQL查询操作</p>
+<ul>
+<li><p>在选课管理系统数据库中，查询选修“数据库系统原理与开发”课程的学生名单。这需要关联课程信息表COURSE、开课计划表PLAN、选课注册信息表REGISTER、学生信息表STUDENT，其查询SQL语句如下：</p>
+<p>SELECT C.CourseName AS 课程名称, S.StudentID AS 学号, S.StudentName AS 姓名<br>FROM COURSE AS C, PLAN AS P, REGISTER AS R, STUDENT AS S<br>WHERE C.CourseID&#x3D;P.CourseID AND C.CourseName&#x3D;‘数据库系统原理与开发’AND P.CoursePlanID&#x3D;R.CoursePlanID AND R.StudentID&#x3D;S.StudentID;</p>
+</li>
+<li><p>上面这个SQL语句是较复杂和冗长，为了让外部程序简单地实现该信息查询，可以先定义一个名称为DatabaseCourseView视图，其创建SQL语句如下：</p>
+<p>CREATE VIEW DatabaseCourseView AS<br>  SELECT C.CourseName AS 课程名称, S.StudentID AS 学号, S.StudentName AS 姓名<br>FROM COURSE AS C，PLAN AS P, REGISTER AS R, STUDENT AS S<br>WHERE C.CourseID&#x3D;P.CourseID AND C. CourseName&#x3D;‘数据库系统原理与开发’ AND P.CoursePlanID&#x3D;R.CoursePlanID AND R.StudentID&#x3D;S. StudentID;</p>
+</li>
+</ul>
+</li>
+<li><p>使用视图提高数据访问安全性</p>
+</li>
+<li><p>提供一定程度的数据逻辑独立性</p>
+</li>
+<li><p>集中展示用户所感兴趣的特定数据</p>
+</li>
+</ul>
+<h2 id="第四章-数据库设计"><a href="#第四章-数据库设计" class="headerlink" title="第四章 数据库设计"></a>第四章 数据库设计</h2><h3 id="数据库设计方案"><a href="#数据库设计方案" class="headerlink" title="数据库设计方案"></a>数据库设计方案</h3><ul>
+<li><p>数据库应用访问方式</p>
+</li>
+<li><p>数据库结构模型</p>
+<ul>
+<li><p>概念数据模型</p>
+<p>是一种面向用户的系统所数据模型，用来描述显示世界的系统概念化数据结构。</p>
+</li>
+<li><p>逻辑数据模型</p>
+<p>在概念数据模型基础上，从系统设计角度描述系统的数据对象组成及其关联结构，并考虑这些数据对象符合数据库对象的逻辑表示。</p>
+</li>
+<li><p>物理数据模型</p>
+<p>在逻辑数据模型基础上，针对具体DBMS所设计的数据模型。</p>
+</li>
+</ul>
+</li>
+<li><p>数据库应用结构</p>
+</li>
+</ul>
+<h3 id="数据库开发过程及设计策略"><a href="#数据库开发过程及设计策略" class="headerlink" title="数据库开发过程及设计策略"></a>数据库开发过程及设计策略</h3><p>数据库开发过程</p>
+<ul>
+<li><p>数据需求分析</p>
+<ul>
+<li>从现实业务获取数据表单、报表、查询、业务规则、数据更新的说明</li>
+<li>分析系统的数据特征、数据类型、数据取值约束</li>
+<li>描述系统的数据关系、数据处理要求</li>
+<li>建立系统的数据字典</li>
+</ul>
+</li>
+<li><p>数据库设计阶段</p>
+<ul>
+<li>数据库模型结构设计（系统概念数据建模、系统逻辑数据建模、系统物理数据建模）</li>
+<li>数据库索引、视图、查询设计</li>
+<li>数据库表约束设计</li>
+<li>数据库触发器、存储过程设计</li>
+</ul>
+</li>
+<li><p>数据库实现</p>
+<ul>
+<li>数据库创建</li>
+<li>数据模型物理实现</li>
+</ul>
+</li>
+<li><p>数据库测试</p>
+<p>数据库数据上线</p>
+<p>数据库系统测试</p>
+</li>
+</ul>
+<p>设计策略</p>
+<ul>
+<li>自底向上设计</li>
+<li>自顶向下设计</li>
+<li>子内向外设计</li>
+<li>混合策略设计</li>
+</ul>
+<h3 id="E-R模型方法"><a href="#E-R模型方法" class="headerlink" title="E-R模型方法"></a>E-R模型方法</h3><h4 id="基本建模"><a href="#基本建模" class="headerlink" title="基本建模"></a>基本建模</h4><p>E-R模型：实体-联系模型，基本元素包括实体、属性、标识符和联系</p>
+<ul>
+<li><p>实体</p>
+<p>是指问题域中存在的人、事、物、地点等客观事务在逻辑层面的数据抽象。</p>
+</li>
+<li><p>属性</p>
+<p>是指描述实体特征的数据项。</p>
+</li>
+<li><p>标识符</p>
+<p>是指标识不同实体实例的属性。</p>
+<p>标识符与主键的区别是标识符是一个逻辑概念，主键是物理概念。</p>
+</li>
+<li><p>联系</p>
+<p>是指实体之间的关联关系</p>
+<p>实体之间的关联的数目被称为元</p>
+<ul>
+<li><p>二元实体联系类型</p>
+<ul>
+<li>1对1</li>
+<li>1对多</li>
+<li>多对多</li>
+</ul>
+<p><img src="E:\typora-user-images\image-20220529112740146.png" srcset="/img/loading.gif" lazyload alt="image-20220529112740146"></p>
+<ul>
+<li><pre><code class="hljs">    可选
+</code></pre>
+</li>
+<li><pre><code class="hljs">    强制
+</code></pre>
+</li>
+</ul>
+<p><img src="E:\typora-user-images\image-20220529113003762.png" srcset="/img/loading.gif" lazyload alt="image-20220529113003762"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="扩展建模"><a href="#扩展建模" class="headerlink" title="扩展建模"></a>扩展建模</h4><p>实体继承联系：</p>
+<p>父实体：具有公共属性的实体；子实体：与父实体具有相似属性，同时也具有特殊性的一个或多个实体</p>
+<ul>
+<li><p>互斥性继承联系</p>
+</li>
+<li><p>非互斥性继承联系<br><img src="E:\typora-user-images\image-20220529145948199.png" srcset="/img/loading.gif" lazyload alt="image-20220529145948199"></p>
+</li>
+<li><p>完整继承</p>
+</li>
+<li><p>非完整继承<br><img src="E:\typora-user-images\image-20220529150024453.png" srcset="/img/loading.gif" lazyload alt="image-20220529150024453"></p>
+</li>
+</ul>
+<p>强弱实体联系：</p>
+<p>弱实体：指那些对于另外实体有依赖关系的实体，一个实体的存在必须以另一实体的存在为前提<br>强实体：被依赖的实体<br>标识符依赖弱实体：即弱实体的标识符中含有所依赖实体的标识符，即该弱实体称为标识符依赖弱实体<br><img src="E:\typora-user-images\image-20220529151200063.png" srcset="/img/loading.gif" lazyload alt="image-20220529151200063"></p>
+<p>非标识符依赖弱实体</p>
+<h3 id="数据库规范化设计"><a href="#数据库规范化设计" class="headerlink" title="数据库规范化设计"></a>数据库规范化设计</h3><p>为什么需要规范化数据库设计？</p>
+<ul>
+<li>减少数据库中的冗余数据，尽量使同一数据在数据库中仅保存一份，有效降低维护数据一致性的工作量</li>
+<li>设计合理的表间依赖关系和约束关系，便于实现数据完整性和一致性</li>
+<li>设计合理的数据库结构，便于系统对数据高效访问处理</li>
+</ul>
+<h4 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h4><p>定义：设有一关系模式R（U）， U 为关系R的属性集合，X和Y为属性U的子集。设t，s是关系R中的任意两个元组，如果t[X] &#x3D; s[X]，则t[Y] &#x3D; s[Y]。那么称Y函数依赖于X，表示为X→Y。<br>函数依赖的左部称为决定因子，右部称为依赖函数。决定因子和依赖函数都是属性的集合</p>
+<p>说明：<br>函数依赖反映属性或属性组之间相互依存、互相制约的关系，即关系表中属性之间的依赖关系。</p>
+<ul>
+<li>完全函数依赖<br>设X、Y是某关系的不同属性集，如X→Y，且不存在X’ÌX ，使X’→Y，则Y称完全函数依赖，否则称Y部分函数依赖。</li>
+<li>部分函数依赖</li>
+<li>属性传递依赖<br>设X、Y、Z是某关系的不同属性集，有X→Y，Y→X  ， Y→Z，若X→Z，称Z对X存在函数传递依赖</li>
+<li>多值函数依赖<br>设U是关系模式R的属性集，X和Y是U的子集，Z&#x3D;U-X-Y，xyz表示属性集XYZ的值。对于R的关系r，在r中存在元组（x, y1, z1）和（x, y2, z2）时，也存在元组（x, y1, z2）和（x, y2, z1），那么在模式R上存在多值函数依赖。</li>
+</ul>
+<h4 id="关系规范化范式"><a href="#关系规范化范式" class="headerlink" title="关系规范化范式"></a>关系规范化范式</h4><p>关系规范化：是把一个有访问异常的关系分解成结构良好的关系的过程，使得这些关系又最小的冗余或没有冗余</p>
+<p>规范化范式：是指关系表符合特定规范化程度的模式</p>
+<ul>
+<li><p>第一范式（1NF）<br>关系表中的属性不可再细分</p>
+</li>
+<li><p>第二范式（2NF）</p>
+<p>关系满足第一范式，并消除了关系中的属性部分函数依赖</p>
+<p>例 有一个关系（A,B,N,O,P）,其复合主键为（A,B）,那么N,O,P这三个非键属性都不存在只依赖A或只依赖B情况，则该关系满足第2范式,反之,不满足第2范式。</p>
+</li>
+<li><p>第三范式（3NF）</p>
+<p>关系满足第2范式，并切断了关系中的属性传递函数依赖</p>
+<p>例 若有一个关系（A,N,O,P）,主键为（A）,那么非键属性N,O或P都不能由单个的N,O或P或它们的组合所确定。该关系满足第3范式。</p>
+</li>
+<li><p>巴斯-科德范式（BCNF）</p>
+<p>在关系中，所有函数依赖都是候选键</p>
+<p>例 关系STUDENT(StudentNum, Name, Email)中，决定因子StudentNum也是候选键，该关系满足BCNF范式。</p>
+</li>
+<li><p>第四范式（4NF）</p>
+<p>关系满足BCNF范式，并消除了多值依赖函数依赖</p>
+<p>设学校中某一门课程由多个教师讲授，每个教师可有自己的参考书。用关系模式Teaching（Course，Teacher，Book）来表示课程、教师和参考书之间的关系。<br>该关系Teaching（Course，Teacher，Book），属于BCNF范式；但是存在多值函数依赖，即不满足4NF。</p>
+</li>
+</ul>
+<p>关系的规范化程度依次提升：1NF→ 2NF → 3NF→ BNCF → 4NF</p>
+<p>逆规范化处理</p>
+<p>逆规范化：适当降低规范化范式约束，不再要求一个关系表必须达到很高的规范化程度，而是允许适当的数据冗余性，以获取数据访问性能。</p>
+<p>基本方法:</p>
+<p>增加冗余列或派生列<br>多个关系表合并为一个关系表</p>
+<h2 id="第五章-数据库管理"><a href="#第五章-数据库管理" class="headerlink" title="第五章 数据库管理"></a>第五章 数据库管理</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p>数据库管理是指为保证数据库系统的正常运行和服务质量必须进行的系统管理工作</p>
+<p>为什么需要数据库管理</p>
+<ul>
+<li>数据库系统随规模增大，系统会变得异常复杂</li>
+<li>多用户数据库应用带来数据库访问复杂性</li>
+<li>数据安全和数据隐私对机构和用户都非常重要</li>
+<li>数据库系统随数据量增加和使用时间增长其性能降低</li>
+<li>系统遭遇意外，数据库损坏或数据丢失</li>
+</ul>
+<p>管理目标</p>
+<ul>
+<li>保障数据库系统正常运行</li>
+<li>充分发挥数据库系统的软硬件处理能力</li>
+<li>确保数据库系统安全和用户数据隐私性</li>
+<li>有效管理数据库用户及其角色权限</li>
+<li>解决数据库系统性能优化、系统故障与数据损坏等问题</li>
+<li>最大程度地发挥数据库对其所属机构的作用</li>
+</ul>
+<p>管理内容</p>
+<ul>
+<li>DBMS系统运行管理</li>
+<li>数据库性能监控</li>
+<li>数据库索引管理</li>
+<li>数据库查询优化</li>
+<li>数据库事务并发控制</li>
+<li>数据库角色管理</li>
+<li>数据库用户管理</li>
+<li>数据库对象权限管理</li>
+<li>数据安全管理</li>
+<li>数据库备份</li>
+<li>数据库恢复等</li>
+</ul>
+<p>管理员DBA职责</p>
+<ul>
+<li>负责数据库系统开发与运维</li>
+<li>负责数据库用户与权限管理</li>
+<li>负责数据库备份与数据库恢复管理</li>
+<li>负责数据库性能调优管理等</li>
+</ul>
+<h3 id="事务管理"><a href="#事务管理" class="headerlink" title="事务管理"></a>事务管理</h3><p>事务是指由单个业务处理单元的一组数据库访问操作，要求它们要么都成功执行，要么都不执行。</p>
+<p>事务是DBMS执行的最小任务单元。同时，事务也是DBMS最小的故障恢复单元和并发控制任务单元。<br><img src="E:\typora-user-images\image-20220529204032657.png" srcset="/img/loading.gif" lazyload alt="image-20220529204032657"></p>
+<p>事务特性</p>
+<ul>
+<li>原子性：事务所有操作在数据库中要么全部执行，要么全部不执行</li>
+<li>一致性：事务多次执行，其结果应一致</li>
+<li>隔离性：事物与事物之间隔离，并发执行透明</li>
+<li>持续性：事务完成后，数据改变必须是永久的</li>
+</ul>
+<p>事务并发执行</p>
+<p>事务并发执行是指多个事务程序在数据库系统中同一时段运行</p>
+<ul>
+<li>改善系统的资源利用率</li>
+<li>减少事务运行的平均等待时间</li>
+</ul>
+<p>事务SQL语句</p>
+<ul>
+<li>BEGIN或START TRANSACTION	事务开始语句</li>
+<li>ROLLBACK	事务回滚语句</li>
+<li>COMMIT       事务提交语句</li>
+<li>SAVEPOINT   事务保存语句</li>
+</ul>
+<p>基本框架</p>
+<p><img src="E:\typora-user-images\image-20220529230344578.png" srcset="/img/loading.gif" lazyload alt="image-20220529230344578"></p>
+<p>注意事项</p>
+<p><img src="E:\typora-user-images\image-20220529230456852.png" srcset="/img/loading.gif" lazyload alt="image-20220529230456852"></p>
+<h3 id="并发控制"><a href="#并发控制" class="headerlink" title="并发控制"></a>并发控制</h3><h4 id="事务调度"><a href="#事务调度" class="headerlink" title="事务调度"></a>事务调度</h4><p>目的</p>
+<ul>
+<li>支持并发事务处理，使更多用户并行操作，提高系统的并发访问能力</li>
+<li>保证一个事务工作不会对另一个事务工作产生不合理的影响</li>
+</ul>
+<p>问题</p>
+<ul>
+<li><p>丢失更新数据<br><img src="E:\typora-user-images\image-20220529230832075.png" srcset="/img/loading.gif" lazyload alt="image-20220529230832075"></p>
+</li>
+<li><p>脏数据读取<br><img src="E:\typora-user-images\image-20220529230909364.png" srcset="/img/loading.gif" lazyload alt="image-20220529230909364"></p>
+</li>
+<li><p>不可重复读取<br><img src="E:\typora-user-images\image-20220529230928790.png" srcset="/img/loading.gif" lazyload alt="image-20220529230928790"></p>
+</li>
+</ul>
+<p>并发事务调度原理与策略</p>
+<p>并发事务调度：控制多个事务的数据操作语句按照恰当的顺序访问共享数据，使这些事务执行之后，避免造成数据的不一致性，即解决“丢失更新数据”等问题</p>
+<p>目标：使并发事务调度实现的处理结果与串行化调度处理结果一致</p>
+<h4 id="锁机制、控制协议、死锁、事务隔离"><a href="#锁机制、控制协议、死锁、事务隔离" class="headerlink" title="锁机制、控制协议、死锁、事务隔离"></a>锁机制、控制协议、死锁、事务隔离</h4><p>资源锁定访问</p>
+<ul>
+<li>排它锁定（Lock-X）-又称写锁，若事务T对数据对象A加上X锁，事务T可以读A也可以修改A，其他事务不能再对A加任何锁，直到T释放A上的锁。这保证了其他事务在T释放A上的锁之前不能再加锁读取和修改A。</li>
+<li>共享锁定（Lock-S）-又称读锁，若事务T对数据对象A加上S锁，则事务T可以读A但不能修改A，其他事务只能再对A加S锁，而不能加X锁，直到T释放A上的S锁。这保证了其他事务可以读A，但在T释放A上的S锁之前不能对A做任何修改。</li>
+</ul>
+<p>资源锁定粒度</p>
+<ul>
+<li>数据库-粒度最大</li>
+<li>表</li>
+<li>页面</li>
+<li>行</li>
+</ul>
+<p>资源锁定实施方式</p>
+<ul>
+<li>隐式锁定-DBMS缺省执行</li>
+<li>显示锁定-加锁命令显示执行</li>
+</ul>
+<p>基于锁机制的并发控制协议</p>
+<ul>
+<li><p>锁操作的相容性</p>
+<p><img src="E:\typora-user-images\image-20220529231838610.png" srcset="/img/loading.gif" lazyload alt="image-20220529231838610"></p>
+</li>
+<li><p>加锁协议</p>
+<ul>
+<li><p>一级加锁协议<br>任何事务在修改共享数据对象之前，必须对该数据执行排它锁定指令，直到该事务处理完成，才进行解锁指令执行</p>
+<p>可避免更新丢失问题，其他不可解决</p>
+</li>
+<li><p>二级加锁协议<br>在一级加锁协议基础上，针对并发事务的共享数据读操作，必须对该数据执行共享锁定指令，读完数据后即可释放共享锁定</p>
+<p>可能会出现“不可重复读取”的数据不一致问题</p>
+</li>
+<li><p>三级加锁协议<br>在一级加锁协议基础上，针对并发事务对共享数据进行读操作，必须对该数据执行共享锁定指令，直到该事务处理结束才释放共享锁定。</p>
+</li>
+</ul>
+</li>
+<li><p>不同级别锁协议比较</p>
+<p><img src="E:\typora-user-images\image-20220529232418408.png" srcset="/img/loading.gif" lazyload alt="image-20220529232418408"></p>
+</li>
+</ul>
+<p>两阶段加锁协议</p>
+<p>并发事务的正确调度准则：一个给定的并发事务调度，当且仅当它是可串行化时，才能保证正确调度。<br>保证可串行化的一个协议是：二阶2段锁定协议</p>
+<p>二阶段锁定协议规定每个事务必须分两个阶段提出加锁和解锁申请</p>
+<ul>
+<li>增长阶段，事务只能获得锁，但不能释放锁</li>
+<li>缩减阶段，事务只能释放锁，但不能获得新锁</li>
+</ul>
+<p>死锁问题解决</p>
+<ul>
+<li><p>事务死锁<br>在基于锁机制的并发事务执行中，如果这些事务同时锁定两个以及以上资源时，可能会出现彼此都不能继续执行的状态，即事物死锁状态</p>
+</li>
+<li><p>死锁出现的必要条件</p>
+<ul>
+<li>互斥条件</li>
+<li>请求和保持条件</li>
+<li>不剥夺条件</li>
+<li>环路等待条件</li>
+</ul>
+</li>
+<li><p>防范死锁的策略</p>
+<ul>
+<li>允许用户一次发出当前所需全部资源的锁定，使用完成后，再释放给其它用户访问</li>
+<li>规定所有应用程序锁定资源的顺序必须完全相同</li>
+</ul>
+</li>
+<li><p>解决方法</p>
+<p>当发生死锁时，回滚其中的一个事务，并取消它对数据库所做的改动</p>
+</li>
+</ul>
+<h3 id="安全管理"><a href="#安全管理" class="headerlink" title="安全管理"></a>安全管理</h3><h4 id="存取安全模型"><a href="#存取安全模型" class="headerlink" title="存取安全模型"></a>存取安全模型</h4><p>数据库系统面临的安全风险</p>
+<ul>
+<li><p>黑客利用系统漏洞，攻击系统运行、窃取和篡改系统数据。</p>
+</li>
+<li><p>内部人员非法地泄露、篡改、删除系统的用户数据。</p>
+</li>
+<li><p>系统运维人员操作失误导致数据被删除或数据库服务器系统宕机。</p>
+</li>
+<li><p>系统故障导致数据库的数据损坏、数据丢失、数据库实例无法启动。</p>
+</li>
+<li><p>意外灾害事件（火灾、水灾、地震等自然灾害）导致系统被破坏。</p>
+</li>
+</ul>
+<p>数据库系统安全模型</p>
+<ul>
+<li>身份验证：从应用系统层面确认登录用户是否合法使用者</li>
+<li>权限控制：从DBMS系统层面通过存取权限机制控制用户对数据的访问</li>
+<li>系统防护：从操作系统层面提供的安全机制非法系统访问</li>
+<li>加密存储：从数据存储层面通过加密算法对数据库中数据进行加密存储</li>
+</ul>
+<h3 id="用户、角色、权限管理"><a href="#用户、角色、权限管理" class="headerlink" title="用户、角色、权限管理"></a>用户、角色、权限管理</h3><h4 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h4><ul>
+<li><p>用户创建<br>CREATE USER &lt;用户账号名&gt; [ [WITH] option […]];</p>
+<ul>
+<li>创建一个新用户，其账号名字为“userA”，密码为“123456”。该用户具有登录权限（Login）和角色继承权限（Inherit）系统权限，但它不是超级用户（SuperUser），不具有创建数据库权限（CreateDB）、创建角色权限（CreateRole）、数据库复制权限（Replication），此外数据库连接数（Connection Limit）不受限。<br>CREATE USER “userA” WITH<br> LOGIN<br> NOSUPERUSER<br> NOCREATEDB<br> NOCREATEROLE<br> INHERIT<br> NOREPLICATION<br> CONNECTION LIMIT -1<br> PASSWORD ‘123456’;</li>
+</ul>
+</li>
+<li><p>用户修改</p>
+<p>ALTER USER &lt;用户名&gt; [ [ WITH ] option [ … ] ];  –修改用户的属性ALTER USER &lt;用户名&gt; RENAME TO &lt;新用户名&gt;;  –修改用户的名称ALTER USER &lt;用户名&gt; SET &lt;参数项&gt; { TO | &#x3D; } { value | DEFAULT }; –修改用户的参数值<br>ALTER USER &lt;用户名&gt; RESET &lt;参数项&gt;; –重置用户参数值</p>
+<ul>
+<li><p>修改用户“userA”的账号密码为“gres123”。同时也限制该用户的数据库连接数为10。</p>
+<p>ALTER USER “userA”<br> CONNECTION LIMIT 10<br> PASSWORD ‘gres123’;</p>
+</li>
+</ul>
+</li>
+<li><p>用户删除<br>DROP USER &lt;用户名&gt;；</p>
+</li>
+</ul>
+<h4 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h4><p>SQL语句：<br>GRANT &lt;权限名&gt; ON &lt;对象名&gt; TO {数据库用户名|用户角色名}；REVOKE &lt;权限名&gt; ON &lt;对象名&gt; FROM {数据库用户名|用户角色名}；DENY &lt;权限名&gt; ON &lt;对象名&gt; TO {数据库用户名|用户角色名}；</p>
+<ul>
+<li><p>在3.7.1节的工程项目管理系统中，DBA管理员赋予员工用户（userA）对部门表（Department）、员工表（Employee）、项目表（Project）和任务表（Assignment）的读取数据权限。</p>
+<p>GRANT SELECT ON Department TO “userA”;<br>GRANT SELECT ON Employee  TO “userA”;<br>GRANT SELECT ON Project   TO “userA”;<br>GRANT SELECT ON Assignment TO “userA”;</p>
+</li>
+</ul>
+<h4 id="角色管理"><a href="#角色管理" class="headerlink" title="角色管理"></a>角色管理</h4><p>CREATE ROLE &lt;角色名&gt; [ [ WITH ] option [ … ] ];   –创建角色<br>ALTER ROLE &lt;角色名&gt; [ [ WITH ] option [ … ] ];   –修改角色属性<br>ALTER ROLE &lt;角色名&gt; RENAME TO &lt;新角色名&gt;;   –修改角色名称<br>ALTER ROLE &lt;角色名&gt; SET &lt;参数项&gt; { TO | &#x3D; } { value | DEFAULT };<br>  –修改角色参数值<br>ALTER ROLE &lt;角色名&gt; RESET &lt;参数项&gt;;  –复位角色参数值<br>DROP ROLE &lt;角色名&gt;;  –删除指定角色</p>
+<ul>
+<li><p>例 在工程项目管理系统中，假定需要在ProjectDB数据库内创建经理角色Role_Manager。该角色具有登录权限（Login）和角色继承权限（Inherit）系统权限，但它不是超级用户（SuperUser），不具有创建数据库权限（CreateDB）、创建角色权限（CreateRole）、数据库复制权限（Replication），此外数据库连接数（Connection Limit）不受限。</p>
+<p>GRANT SELECT,INSERT,UPDATE,DELETE ON Department TO “Role_Manager”;<br>GRANT SELECT,INSERT,UPDATE,DELETE ON Employee TO “Role_Manager”;<br>GRANT SELECT,INSERT,UPDATE,DELETE ON Project TO “Role_Manager”;<br>GRANT SELECT,INSERT,UPDATE,DELETE ON Assignment TO “Role_Manager”;</p>
+</li>
+</ul>
+<h3 id="数据库备份与恢复"><a href="#数据库备份与恢复" class="headerlink" title="数据库备份与恢复"></a>数据库备份与恢复</h3><p>数据库备份：是指将数据库当前数据和状态进行副本复制，以便当数据库受到破坏或丢失数据时可以进行修复</p>
+<p>数据库恢复：是指数据库中数据丢失或被破坏时，从备份副本将数据库从错误状态恢复到某一正确状态</p>
+<p>恢复时机</p>
+<ul>
+<li>事务故障的数据恢复</li>
+<li>系统崩溃的数据恢复</li>
+<li>存储介质损坏的数据恢复</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/ji-suan-ji/" class="category-chain-item">ji&#39;suan&#39;ji</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">#数据库</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>数据库-总结</div>
+      <div>http://example.com/2023/10/19/数据库-总结/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>JasmineChen</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年10月19日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/10/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E6%80%BB%E7%BB%93/" title="操作系统-总结">
+                        <span class="hidden-mobile">操作系统-总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

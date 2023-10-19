@@ -1,0 +1,1695 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/banshee_avator.png">
+  <link rel="icon" href="/img/banshee_avator.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="JasmineChen">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="操作系统复习第一章 操作系统引论 操作系统是一组控制和管理计算机软硬件资源、合理对各类作业进行调度以及方便用户使用的程序集合。 操作系统是位于硬件层之上，所有其它系统软件层之下的一个系统软件，使得管理系统中的各种软件和硬件资源得以充分利用，方便用户使用计算机系统  操作系统的的目标方便性、有效性、可扩展性、开放性 OS的作用  作为用户与计算机硬件系统之间的接口 操作系统应隐藏复杂的、困难的、丑陋">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统-总结">
+<meta property="og:url" content="http://example.com/2023/10/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="JasmineChen&#39;s Blog">
+<meta property="og:description" content="操作系统复习第一章 操作系统引论 操作系统是一组控制和管理计算机软硬件资源、合理对各类作业进行调度以及方便用户使用的程序集合。 操作系统是位于硬件层之上，所有其它系统软件层之下的一个系统软件，使得管理系统中的各种软件和硬件资源得以充分利用，方便用户使用计算机系统  操作系统的的目标方便性、有效性、可扩展性、开放性 OS的作用  作为用户与计算机硬件系统之间的接口 操作系统应隐藏复杂的、困难的、丑陋">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="e:\typora-user-images\image-20220604193920752-16976793458911.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220604200057737-16976793458939.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220604202831054-16976793458922.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220604210820554-16976793458923.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220604210914411-16976793458924.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220604214040108-16976793458935.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220604214133166-16976793458936.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220604214220502-16976793458937.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220604214316871-16976793458938.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220604214336553-169767934589310.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220604214604141-169767934589311.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220604214750628-169767934589312.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220604214759220-169767934589313.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220604215059656-169767934589314.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220604215113034-169767934589415.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220604215124505-169767934589416.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605130326424-169767934589417.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605130439953-169767934589418.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605130513646-169767934589419.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605130621721-169767934589420.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605130642919-169767934589421.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605130929794-169767934589422.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605131003389-169767934589423.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605131236331-169767934589424.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605131332304-169767934589425.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605134927089-169767934589426.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605134952788-169767934589427.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605135034052-169767934589428.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605135054789-169767934589429.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605135430779-169767934589430.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605135547052-169767934589432.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605135947482-169767934589431.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605142358345-169767934589433.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605142809766-169767934589434.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605143255269-169767934589537.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605143740757-169767934589535.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605145257711-169767934589536.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605150339387-169767934589538.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605150939558-169767934589540.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605150953092-169767934589539.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605161924472-169767934589541.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605170126277-169767934589542.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605175116624-169767934589543.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605224821133-169767934589544.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605205011466-169767934589545.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605205238838-169767934589546.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605205429687-169767934589547.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605205609675-169767934589548.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605225559680-169767934589549.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605225629393-169767934589550.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220605230113193-169767934589551.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220606220430490-169767934589552.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220606220559885-169767934589553.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220606222517343-169767934589554.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607170757252-169767934589555.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607170937568-169767934589556.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607183209907-169767934589557.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607185436904-169767934589558.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607191115105-169767934589560.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607191539097-169767934589559.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607191620995-169767934589561.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607191646194-169767934589562.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607191755507-169767934589663.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607191956397-169767934589665.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607192026905-169767934589664.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607141812672-169767934589666.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607144244381-169767934589667.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607144253812-169767934589668.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607144404262-169767934589669.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607144447461-169767934589670.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607144556354-169767934589672.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607144645258-169767934589671.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607144931020-169767934589673.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607144952211-169767934589674.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607145048987-169767934589675.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607145211308-169767934589676.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607151005026-169767934589677.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607151120757-169767934589678.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607151434880-169767934589679.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607151618917-169767934589680.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607152150438-169767934589681.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607152439764-169767934589682.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607152813752-169767934589683.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607152845568-169767934589684.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607154317622-169767934589685.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607154334956-169767934589686.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607154345527-169767934589687.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607154355996-169767934589688.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607154404950-169767934589689.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607154419553-169767934589790.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607154459783-169767934589791.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607154509620-169767934589792.png">
+<meta property="og:image" content="e:\typora-user-images\image-20220607155811313-169767934589793.png">
+<meta property="article:published_time" content="2023-10-19T01:35:05.000Z">
+<meta property="article:modified_time" content="2023-10-19T01:44:00.808Z">
+<meta property="article:author" content="JasmineChen">
+<meta property="article:tag" content="操作系统">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="e:\typora-user-images\image-20220604193920752-16976793458911.png">
+  
+  
+  
+  <title>操作系统-总结 - JasmineChen&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>JasmineChen&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/00R.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="操作系统-总结"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-10-19 09:35" pubdate>
+          2023年10月19日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          18k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          147 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">操作系统-总结</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="操作系统复习"><a href="#操作系统复习" class="headerlink" title="操作系统复习"></a>操作系统复习</h1><h2 id="第一章-操作系统引论"><a href="#第一章-操作系统引论" class="headerlink" title="第一章 操作系统引论"></a>第一章 操作系统引论</h2><ul>
+<li>操作系统是一组控制和管理计算机软硬件资源、合理对各类作业进行调度以及方便用户使用的程序集合。</li>
+<li>操作系统是位于硬件层之上，所有其它系统软件层之下的一个系统软件，使得管理系统中的各种软件和硬件资源得以充分利用，方便用户使用计算机系统</li>
+</ul>
+<h3 id="操作系统的的目标"><a href="#操作系统的的目标" class="headerlink" title="操作系统的的目标"></a>操作系统的的目标</h3><p>方便性、有效性、可扩展性、开放性</p>
+<p>OS的作用</p>
+<ul>
+<li>作为用户与计算机硬件系统之间的接口<ul>
+<li>操作系统应隐藏复杂的、困难的、丑陋的、特殊的的硬件细节，呈现给程序良好、清晰、优雅、一致的抽象</li>
+<li>操作系统的任务就是创建好的抽象，并实现和管理它所创建的抽象</li>
+</ul>
+</li>
+<li>作为资源管理者的操作系统<ul>
+<li>处理机管理，用于分配和控制处理机</li>
+<li>存储器管理，主要负责内存的分配与回收</li>
+<li>I&#x2F;O设备管理，负责I&#x2F;O设备的分配与操纵</li>
+<li>文件管理，负责文件的存取，共享和保护</li>
+</ul>
+</li>
+<li>作为扩展机器的操作系统</li>
+</ul>
+<h3 id="操作系统的发展过程"><a href="#操作系统的发展过程" class="headerlink" title="操作系统的发展过程"></a>操作系统的发展过程</h3><p>无操作系统</p>
+<ul>
+<li>人工操作方式：穿孔卡片</li>
+<li>脱机输入输出方式</li>
+</ul>
+<p>单道批处理操作系统</p>
+<ul>
+<li>系统对作业的处理都是成批进行的，且在内存中始终仅存一道作业运行，运行结束或出错，才自动调另一道作业运行，故称为单道批处理系统</li>
+<li>自动行、顺序性、单道性</li>
+<li>减少人工操作，解决了作业的自动接续</li>
+<li>平均周转时间长，没有交互能力</li>
+</ul>
+<p>多道批处理操作系统</p>
+<ul>
+<li>在内存中存放多道作业运行，运行结束或出错，自动调度内存中的另一道作业运行</li>
+<li>提高cpu的利用率、提高内存和I&#x2F;O设备利用率、增加系统吞吐率</li>
+<li>多道性、无序性、调度性</li>
+<li>平均周转时间长、没有交互能力</li>
+</ul>
+<p>分时操作系统</p>
+<ul>
+<li>多路性、独立性、及时性、交互性</li>
+</ul>
+<p>实时操作系统</p>
+<ul>
+<li>是计算机及时响应外部事件的请求，在规定时间内完成对该事件的处理，并控制所有实时设备和实时任务协调一致的运行</li>
+<li>响应及时，可靠性高</li>
+<li>多路性、独立性、交互性、可靠性、及时性</li>
+</ul>
+<h3 id="操作系统的基本特征"><a href="#操作系统的基本特征" class="headerlink" title="操作系统的基本特征"></a>操作系统的基本特征</h3><p>并发性（最重要的特征）、共享性、虚拟性、异步性</p>
+<ul>
+<li><p>并发-并行性和并发性，并发执行的过程。</p>
+<p>进程：系统中能独立运行并作为资源分配的基本单位，由一组机器指令、数据和堆栈等组成的独立运行的活动实体</p>
+<p>进程作为资源分配的基本单位</p>
+<p>线程作为独立运行和调度的基本单位</p>
+</li>
+<li><p>共享</p>
+<p>是指系统中的资源可供内存多个并发执行的进程共同使用<br>包括：互斥共享和同时访问两种方式</p>
+</li>
+<li><p>虚拟</p>
+<p>是指通过某种技术把一个物理实体变为（映射为）若干个逻辑上的对应物<br>包括：时分复用技术，空分复用技术</p>
+</li>
+<li><p>异步</p>
+<p>执行结果不确定，程序不再现</p>
+</li>
+</ul>
+<h3 id="操作系统的主要功能"><a href="#操作系统的主要功能" class="headerlink" title="操作系统的主要功能"></a>操作系统的主要功能</h3><p>主要任务：为多道程序的运行提供良好的运行环境，以保证多道程序能有条不紊地、高效地运行，并能最大程度地提高系统中各种资源的利用率和方便用户的使用</p>
+<p>功能包括：处理机管理，文件管理，设备管理，存储器管理，方便用户使用的用户接口</p>
+<h3 id="OS结构设计"><a href="#OS结构设计" class="headerlink" title="OS结构设计"></a>OS结构设计</h3><ul>
+<li>无结构的OS</li>
+<li>模块式结构OS</li>
+<li>层次式结构OS</li>
+<li>微内核结构OS<ul>
+<li>足够小的内核</li>
+<li>基于客户&#x2F;服务器模式</li>
+<li>应用”机制与策略分离“原理</li>
+<li>采用面向对象技术</li>
+</ul>
+</li>
+</ul>
+<h2 id="第二章-进程管理"><a href="#第二章-进程管理" class="headerlink" title="第二章 进程管理"></a>第二章 进程管理</h2><h3 id="前趋图和程序执行"><a href="#前趋图和程序执行" class="headerlink" title="前趋图和程序执行"></a>前趋图和程序执行</h3><p>前趋图：有向无循环图，用于描述进程之间执行的前后关系</p>
+<p>相关名称：直接前趋，直接后继，初始结点，终止结点</p>
+<p>程序顺序执行的的特征：</p>
+<ul>
+<li>顺序性：处理机的操作严格按照程序所规定的顺序执行</li>
+<li>封闭性：程序运行时独占全机资源，程序一旦开始执行，其执行结果不受外界因素影响</li>
+<li>可再现性：只要程序执行时的环境和初始条件相同，都将获得相同的结果</li>
+</ul>
+<p>程序并发执行的特征：</p>
+<p>间断性，失去封闭性，不可再现性</p>
+<h3 id="进程的描述"><a href="#进程的描述" class="headerlink" title="进程的描述"></a>进程的描述</h3><p>进程的定义：</p>
+<ul>
+<li>进程是程序的一次执行</li>
+<li>进程是一个程序及其数据在处理机上顺序执行时所发生的活动</li>
+<li>进程程序在一个数据集合上运行的过程，它是系统进行资源分配和调度的一个独立单位</li>
+</ul>
+<p>进程的特征</p>
+<ul>
+<li><p>结构特征</p>
+<p>进程实体：由程序段、相关的数据段和PCB（程序控制块）构成</p>
+<p>创建进程：实质上是创建进程实体中的PCB<br>撤销进程：实质上是撤销进程的PCB</p>
+</li>
+<li><p>动态性</p>
+<p>进程的实质是进程实体的一次执行过程</p>
+<p>程序是一组有序指令的集合，其本身并不具有运动的含义，因而使静态的</p>
+</li>
+<li><p>并发性，独立性，异步性等</p>
+</li>
+</ul>
+<h4 id="进程的基本状态机转换"><a href="#进程的基本状态机转换" class="headerlink" title="进程的基本状态机转换"></a>进程的基本状态机转换</h4><p>三种基本状态：就绪、阻塞，执行<br><img src="E:\typora-user-images\image-20220604193920752-16976793458911.png" srcset="/img/loading.gif" lazyload alt="image-20220604193920752"></p>
+<ul>
+<li><p>就绪状态<br>进程分配到除CPU以外的所有必要资源后，只要再获得CPU，便可立即执行</p>
+</li>
+<li><p>执行状态</p>
+<p>进程已获得CPU，其程序正在执行</p>
+</li>
+<li><p>阻塞状态</p>
+<p>正在执行的进程由于发生某事件而暂时无法继续执行时，便放弃处理机而处于暂停状态</p>
+</li>
+</ul>
+<p>五种状态及转换模型</p>
+<p>五种状态：创建，就绪，执行，阻塞，终止</p>
+<ul>
+<li><p>创建状态</p>
+<p>进程已经创建，但未被OS接纳为可执行进程，并且程序还在辅存</p>
+</li>
+<li><p>终止状态</p>
+<p>因停止或取消，被OS从执行状态释放</p>
+</li>
+</ul>
+<p><img src="E:\typora-user-images\image-20220604200057737-16976793458939.png" srcset="/img/loading.gif" lazyload alt="image-20220604200057737"></p>
+<p>进程挂起操作和进程状态的转换</p>
+<p>挂起转态：使执行的进程暂停执行、静止下来。</p>
+<p>引起挂起状态的原因：</p>
+<ul>
+<li>终端用户的请求</li>
+<li>父进程请求</li>
+<li>负荷调节的需要</li>
+<li>操作系统的需要</li>
+</ul>
+<p>被挂起进程的特征</p>
+<ul>
+<li>不能立即执行</li>
+<li>可能是等待某事件发生</li>
+<li>使之挂起的进程为：自身，其父进程，OS</li>
+<li>只有挂起它的进程才能使之由挂起状态转换为其他状态</li>
+</ul>
+<p>挂起与阻塞：</p>
+<ul>
+<li>就绪：进程在内存，准备执行</li>
+<li>阻塞：进程在内存，等待事件</li>
+<li>就绪&#x2F;挂起：进程在外存，只要调入内存即可执行</li>
+<li>阻塞&#x2F;挂起：进程在外存，等待事件</li>
+</ul>
+<p><img src="E:\typora-user-images\image-20220604202831054-16976793458922.png" srcset="/img/loading.gif" lazyload alt="image-20220604202831054"></p>
+<h4 id="进程管理中的数据结构"><a href="#进程管理中的数据结构" class="headerlink" title="进程管理中的数据结构"></a>进程管理中的数据结构</h4><p>进程控制块的作用</p>
+<ul>
+<li>作为独立运行基本单位的标志</li>
+<li>能实现间断性运行方式</li>
+<li>提供进程管理所需要的信息</li>
+<li>提供进程调度所需要的信息</li>
+<li>实现与其他进程的同步与通信</li>
+</ul>
+<p>PCB常驻内存，是进程存在的唯一标志</p>
+<p>进程控制块中的信息</p>
+<ul>
+<li>进程标识符</li>
+<li>处理机状态</li>
+<li>进程调度信息</li>
+<li>进程控制信息</li>
+</ul>
+<p>PCB的组织方式</p>
+<ul>
+<li>线性方式</li>
+<li>连接方式</li>
+<li>索引方式</li>
+</ul>
+<h3 id="进程控制"><a href="#进程控制" class="headerlink" title="进程控制"></a>进程控制</h3><p>功能：进程的创建，进程的撤销，进程的阻塞与唤醒等</p>
+<p>处理机由核心态和用户态两种执行状态</p>
+<p>OS内核包含两大功能</p>
+<ul>
+<li>支撑功能<ul>
+<li>中断处理</li>
+<li>时钟管理</li>
+<li>原语操作<ul>
+<li>原语是由若干条指令组成的，是用于完成一定功能的一个过程</li>
+<li>原语是原子操作</li>
+<li>原子操作在系统态下执行，常驻内存</li>
+<li>原语的作用是为了实现进程的通信和控制</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>资源管理功能<ul>
+<li>进程管理</li>
+<li>存储器管理</li>
+<li>设备管理</li>
+</ul>
+</li>
+</ul>
+<p>引起创建进程的事件</p>
+<ul>
+<li>用户登录</li>
+<li>作业调度</li>
+<li>提供服务</li>
+<li>应用请求</li>
+</ul>
+<p>调用进程创建原语<code>Create（）</code>，创建一个新进程</p>
+<p>引起进程终止的事件<br>正常结束：批处理中用Holt指令，分时中用Logs off指令</p>
+<p>引起进程阻塞的事件</p>
+<ul>
+<li>请求系统服务</li>
+<li>启动某种操作</li>
+<li>新数据尚为到达</li>
+<li>无新工作可做</li>
+</ul>
+<p>进程通过调用<code>block</code>阻塞原语把自己阻塞</p>
+<p>当被阻塞进程所期待事件出现时，则由有关进程调用唤醒原语<code>wakeup（）</code>，将等待该事件的进程唤醒。</p>
+<p>进程的挂起<br>当出现了引起进程挂起的事件时，系统将利用挂起原语<code>suspend（）</code>将指定进程挂起</p>
+<p>进程的激活<br>当发生激活进程的事件时，则可将外存上处于静止就绪状态的进程换入内存，系统利用激活原语active（）将指定进程激活</p>
+<h3 id="进程同步"><a href="#进程同步" class="headerlink" title="进程同步"></a>进程同步</h3><p>主要任务：是使并发执行的诸进程之间能有效地共享资源和相互合作，从而使程序的执行具有可再现性</p>
+<p>临界资源：一次今允许一个进程访问的资源为临界资源</p>
+<ul>
+<li>生成者-消费者问题</li>
+</ul>
+<p><img src="E:\typora-user-images\image-20220604210820554-16976793458923.png" srcset="/img/loading.gif" lazyload alt="image-20220604210820554"></p>
+<p><img src="E:\typora-user-images\image-20220604210914411-16976793458924.png" srcset="/img/loading.gif" lazyload alt="image-20220604210914411"></p>
+<p>同步机制用遵循的规则</p>
+<ul>
+<li>空闲让进</li>
+<li>忙则等待</li>
+<li>有限等待</li>
+<li>让权等待</li>
+</ul>
+<p>解决临界区（互斥）问题的几类方法</p>
+<p>硬件同步机制</p>
+<p>信号量机制</p>
+<ul>
+<li><p>整型信号量</p>
+<p><img src="E:\typora-user-images\image-20220604214040108-16976793458935.png" srcset="/img/loading.gif" lazyload alt="image-20220604214040108"></p>
+<p><img src="E:\typora-user-images\image-20220604214133166-16976793458936.png" srcset="/img/loading.gif" lazyload alt="image-20220604214133166"></p>
+</li>
+<li><p>记录型信号量</p>
+<p><img src="E:\typora-user-images\image-20220604214220502-16976793458937.png" srcset="/img/loading.gif" lazyload alt="image-20220604214220502"></p>
+<p><img src="E:\typora-user-images\image-20220604214316871-16976793458938.png" srcset="/img/loading.gif" lazyload alt="image-20220604214316871"></p>
+<p><img src="E:\typora-user-images\image-20220604214336553-169767934589310.png" srcset="/img/loading.gif" lazyload alt="image-20220604214336553"></p>
+</li>
+<li><p>AND型信号量</p>
+<p><img src="E:\typora-user-images\image-20220604214604141-169767934589311.png" srcset="/img/loading.gif" lazyload alt="image-20220604214604141"></p>
+<p><img src="E:\typora-user-images\image-20220604214750628-169767934589312.png" srcset="/img/loading.gif" lazyload alt="image-20220604214750628"></p>
+<p><img src="E:\typora-user-images\image-20220604214759220-169767934589313.png" srcset="/img/loading.gif" lazyload alt="image-20220604214759220"></p>
+</li>
+<li><p>信号量集</p>
+<p><img src="E:\typora-user-images\image-20220604215059656-169767934589314.png" srcset="/img/loading.gif" lazyload alt="image-20220604215059656"></p>
+<p><img src="E:\typora-user-images\image-20220604215113034-169767934589415.png" srcset="/img/loading.gif" lazyload alt="image-20220604215113034"></p>
+<p><img src="E:\typora-user-images\image-20220604215124505-169767934589416.png" srcset="/img/loading.gif" lazyload alt="image-20220604215124505"></p>
+</li>
+</ul>
+<p>管程机制</p>
+<p>当共享资源用共享数据结构表示时，资源管理程序可用对该数据结构进行操作的一组过程来表示，我们把这样一组相关的数据结构和过程一并称为管程</p>
+<p>管程由四部分组成：</p>
+<ul>
+<li>管程的名字</li>
+<li>局部于管程的共享变量说明</li>
+<li>对该数据结构进行操作的一组过程</li>
+<li>对局部于管程的数据设置初始值的语句</li>
+</ul>
+<h3 id="经典进程同步问题"><a href="#经典进程同步问题" class="headerlink" title="经典进程同步问题"></a>经典进程同步问题</h3><h4 id="生产者-消费者问题"><a href="#生产者-消费者问题" class="headerlink" title="生产者-消费者问题"></a>生产者-消费者问题</h4><p>生产者和消费者进程共享一个大小固定的缓冲区，其中，一个或多个生产者生产数据，并将生产的数据存入缓冲区，并有一个消费者从缓冲区中取数据。</p>
+<p><img src="E:\typora-user-images\image-20220605130326424-169767934589417.png" srcset="/img/loading.gif" lazyload alt="image-20220605130326424"></p>
+<ul>
+<li><p>记录型信号量</p>
+<p><img src="E:\typora-user-images\image-20220605130439953-169767934589418.png" srcset="/img/loading.gif" lazyload alt="image-20220605130439953"></p>
+<p><img src="E:\typora-user-images\image-20220605130513646-169767934589419.png" srcset="/img/loading.gif" lazyload alt="image-20220605130513646"></p>
+</li>
+<li><p>AND信号量</p>
+<p><img src="E:\typora-user-images\image-20220605130621721-169767934589420.png" srcset="/img/loading.gif" lazyload alt="image-20220605130621721"></p>
+<p><img src="E:\typora-user-images\image-20220605130642919-169767934589421.png" srcset="/img/loading.gif" lazyload alt="image-20220605130642919"></p>
+</li>
+</ul>
+<h4 id="哲学家进餐问题"><a href="#哲学家进餐问题" class="headerlink" title="哲学家进餐问题"></a>哲学家进餐问题</h4><p>5个哲学家围绕一张圆桌而坐，每个哲学家前面有一碟空心面，由于面很滑，所以要两把叉子才能夹住。相邻两个碟子之间有一把叉子。<br>哲学家只有两种活动，在感觉到饿时，分两次取左边和右边的叉子（不分次序），如果成功的得到两把叉子，就吃饭，吃完后继续思考。</p>
+<ul>
+<li><p>记录型信号量</p>
+<p><img src="E:\typora-user-images\image-20220605130929794-169767934589422.png" srcset="/img/loading.gif" lazyload alt="image-20220605130929794"></p>
+</li>
+<li><p>AND信号量</p>
+<p><img src="E:\typora-user-images\image-20220605131003389-169767934589423.png" srcset="/img/loading.gif" lazyload alt="image-20220605131003389"></p>
+</li>
+</ul>
+<h4 id="读者-写者问题"><a href="#读者-写者问题" class="headerlink" title="读者-写者问题"></a>读者-写者问题</h4><p>所谓读者－写者问题，是指保证一个write进程必须与其它进程互斥地访问共享对象的同步问题。</p>
+<p>semaphore rmutex&#x3D;1, wmutex &#x3D; 1;<br>int readcount &#x3D; 0;</p>
+<ul>
+<li><p>记录型信号量</p>
+<p><img src="E:\typora-user-images\image-20220605131236331-169767934589424.png" srcset="/img/loading.gif" lazyload alt="image-20220605131236331"></p>
+</li>
+<li><p>信号量集</p>
+<p><img src="E:\typora-user-images\image-20220605131332304-169767934589425.png" srcset="/img/loading.gif" lazyload alt="image-20220605131332304"></p>
+</li>
+</ul>
+<h4 id="理发师-顾客问题"><a href="#理发师-顾客问题" class="headerlink" title="理发师-顾客问题"></a>理发师-顾客问题</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs routeros">semaphore <span class="hljs-attribute">customers</span>=0；／*等候的顾客数*／<br>semaphore <span class="hljs-attribute">barbers</span>=0， ／*等候顾客的理发师数*／<br>semaphore <span class="hljs-attribute">mutex</span>=1；<br>int <span class="hljs-attribute">count</span>=0；<br>／*等候的顾客数（还没理发）*／<br>main（）<br>&#123;<br>cobegin<br>barbers（）；<br>customers（）；<br>coend<br>&#125;<br>barber（）<br>&#123;<br><span class="hljs-keyword">while</span>（<span class="hljs-literal">true</span>）<br>&#123;<br>p（customers）；／*是否有等候的顾客*／<br>p（mutex）；<br><span class="hljs-attribute">count</span>=count-1；／*顾客数减1*／<br>v（barbers）； ／*理发师开始理发*／<br>v（mutex）；<br>理发；<br>&#125;<br>&#125;<br>customer（）<br>&#123;<br>p（mutex）；<br><span class="hljs-keyword">if</span>（count&lt;n）<br>&#123;<br><span class="hljs-attribute">count</span>=count+1；／*若有空椅子则等候的顾客数加1*／<br>v（customers）；<br>v（mutex）；<br>p（barbers）；<br>理发；<br>&#125;<br><span class="hljs-keyword">else</span><br>&#123;<br>v（mutex）；／*无空椅子则离开*／<br>&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h3><p>分为两类</p>
+<ul>
+<li><p>低级通信：信号量机制</p>
+<p>缺点：</p>
+<ul>
+<li>效率低</li>
+<li>通信对用户不透明</li>
+</ul>
+</li>
+<li><p>高级通信：共享内存、管道、消息队列、套接字Socket</p>
+<p>直接利用操作系统所提供的一组通信命令，高效地传送大量数据的一种通信方式</p>
+<p>优点：</p>
+<ul>
+<li>效率高</li>
+<li>通信实现细节对用户透明</li>
+</ul>
+</li>
+</ul>
+<h4 id="进程通信的类型"><a href="#进程通信的类型" class="headerlink" title="进程通信的类型"></a>进程通信的类型</h4><ul>
+<li><p>共享存储器系统</p>
+<ul>
+<li>基于共享数据结构的通信方式</li>
+<li>基于共享存储区的通信方式</li>
+</ul>
+</li>
+<li><p>消息传递系统</p>
+<ul>
+<li><p>直接通信方式</p>
+<p>Send （Receiver， message）；<br>Receive（Sender， message）；</p>
+</li>
+<li><p>间接通信方式</p>
+<p>指进程之间利用信箱的通信方式。</p>
+<p>Send (mailbox, message)<br>Receive (mailbox, message)</p>
+</li>
+</ul>
+</li>
+<li><p>管道通信</p>
+<p>管道：连接一个读进程和一个写进程之间通信的共享文件</p>
+</li>
+</ul>
+<h2 id="第三章-处理机调度与死锁"><a href="#第三章-处理机调度与死锁" class="headerlink" title="第三章 处理机调度与死锁"></a>第三章 处理机调度与死锁</h2><p>调度的目的：处理机调度的工作是对CPU资源进行合理的分配使用，以提高处理机利用率，并使各用户公平地得到处理机资源</p>
+<p>需考虑的因素：公平，周转时间，高效，吞吐量，响应时间</p>
+<h3 id="处理机调度的三种层次与目标"><a href="#处理机调度的三种层次与目标" class="headerlink" title="处理机调度的三种层次与目标"></a>处理机调度的三种层次与目标</h3><ul>
+<li><p>高级调度（作业调度，长程调度）</p>
+<p><img src="E:\typora-user-images\image-20220605134927089-169767934589426.png" srcset="/img/loading.gif" lazyload alt="image-20220605134927089"></p>
+</li>
+<li><p>低级调度（进程调度，短程调度）</p>
+<p><img src="E:\typora-user-images\image-20220605134952788-169767934589427.png" srcset="/img/loading.gif" lazyload alt="image-20220605134952788"></p>
+<p><img src="E:\typora-user-images\image-20220605135034052-169767934589428.png" srcset="/img/loading.gif" lazyload alt="image-20220605135034052"></p>
+</li>
+<li><p>中级调度（交换调度，中程调度）</p>
+<p><img src="E:\typora-user-images\image-20220605135054789-169767934589429.png" srcset="/img/loading.gif" lazyload alt="image-20220605135054789"></p>
+</li>
+</ul>
+<p>资源利用率：CPU利用率&#x3D;CPU的有效工作时间&#x2F;（CPU有效工作时间+CPU空闲等待时间）</p>
+<p>公平性，平衡性</p>
+<p>平均周转时间<br><img src="E:\typora-user-images\image-20220605135430779-169767934589430.png" srcset="/img/loading.gif" lazyload alt="image-20220605135430779"></p>
+<p>带权周转时间：作业的周转时间T与系统为他提供服务的时间Ts之比。W&#x3D;T&#x2F;Ts</p>
+<p>平均带权周转时间：<br><img src="E:\typora-user-images\image-20220605135547052-169767934589432.png" srcset="/img/loading.gif" lazyload alt="image-20220605135547052"></p>
+<p>吞吐量：指在单位时间内系统所完成的作业数，因而它与批处理作业的平均作业的平均长度具有密切关系</p>
+<h3 id="作业与作业调度"><a href="#作业与作业调度" class="headerlink" title="作业与作业调度"></a>作业与作业调度</h3><p>作业：用户提交给系统的一项相对独立的工作。程序+数据+作业说明书</p>
+<p><img src="E:\typora-user-images\image-20220605135947482-169767934589431.png" srcset="/img/loading.gif" lazyload alt="image-20220605135947482"></p>
+<p>作业调度的主要任务：根据JCB信息，检查系统中的资源能否满足作业对资源的需求，按照一定的调度算法，从外存的后备队列中选取某些作业调入内存，并为他们创建进程、分配必要资源，安排在就绪队列</p>
+<h4 id="先来先服务-FCFS-算法"><a href="#先来先服务-FCFS-算法" class="headerlink" title="先来先服务(FCFS)算法"></a>先来先服务(FCFS)算法</h4><p>按照作业提交或进程变为就绪状态的先后次序，分派CPU；当前作业或进程占用CPU，直到执行完或阻塞，才主动地出让CPU。<br>FCFS算法比较有利于长作业（进程），而不利于短作业（进程）。<br>FCFS调度算法有利于CPU繁忙型的作业，而不利于I&#x2F;O繁忙型的作业<br><img src="E:\typora-user-images\image-20220605142358345-169767934589433.png" srcset="/img/loading.gif" lazyload alt="image-20220605142358345"></p>
+<h4 id="短作业-x2F-进程优先调度-SJF-x2F-SPF-算法"><a href="#短作业-x2F-进程优先调度-SJF-x2F-SPF-算法" class="headerlink" title="短作业&#x2F;进程优先调度(SJF&#x2F;SPF)算法"></a>短作业&#x2F;进程优先调度(SJF&#x2F;SPF)算法</h4><p>短作业(进程)优先调度算法SJ(P)F，是指对短作业或短进程优先调度的算法。它们可以分别用于作业调度和进程调度。z</p>
+<p><img src="E:\typora-user-images\image-20220605142809766-169767934589434.png" srcset="/img/loading.gif" lazyload alt="image-20220605142809766"></p>
+<h4 id="优先级调度算法-PSA-算法"><a href="#优先级调度算法-PSA-算法" class="headerlink" title="优先级调度算法(PSA)算法"></a>优先级调度算法(PSA)算法</h4><p>外部赋予作业（进程）相应的优先级，例如以作业的紧迫程度作为优先级。<br>选择优先级高的进程投入运行。<br>即可用于作业调度算法，也可用于进程调度。</p>
+<h4 id="高响应比优先-HRRN-调度算法"><a href="#高响应比优先-HRRN-调度算法" class="headerlink" title="高响应比优先(HRRN)调度算法"></a>高响应比优先(HRRN)调度算法</h4><p>HRRN是介于FCFS和SJF之间的折衷算法，既考虑作业等待时间，又考虑作业的运行时间，既照顾短作业又不使长作业的等待时间过长，改进了调度性能。</p>
+<p>赋予作业动态优先级，优先级随作业等待时间延长而增加，从而使长作业的优先级在等待期间不断增加。</p>
+<p><img src="E:\typora-user-images\image-20220605143255269-169767934589537.png" srcset="/img/loading.gif" lazyload alt="image-20220605143255269"></p>
+<h3 id="进程调度"><a href="#进程调度" class="headerlink" title="进程调度"></a>进程调度</h3><p>任务：</p>
+<ul>
+<li>保存处理机现场</li>
+<li>按照某种算法选取进程</li>
+<li>把处理机分配给进程</li>
+</ul>
+<h4 id="轮转调度算法"><a href="#轮转调度算法" class="headerlink" title="轮转调度算法"></a>轮转调度算法</h4><p>原理：FCFS策略+时钟中断+时间片原则</p>
+<p>进程切换时机：<br>时间片内进程结束，进程结束事件激活进程调度，新进程可运行一个时间片；<br>时间片用完，时钟中断激活调度，旧进程到就绪队列尾，队头进程投入运行一个时间片</p>
+<p><img src="E:\typora-user-images\image-20220605143740757-169767934589535.png" srcset="/img/loading.gif" lazyload alt="image-20220605143740757"></p>
+<h4 id="优先级调度算法"><a href="#优先级调度算法" class="headerlink" title="优先级调度算法"></a>优先级调度算法</h4><ul>
+<li>非抢占式优先级调度算法</li>
+<li>抢占式优先级调度算法</li>
+</ul>
+<h4 id="多级反馈队列调度算法"><a href="#多级反馈队列调度算法" class="headerlink" title="多级反馈队列调度算法"></a>多级反馈队列调度算法</h4><p>基本思想：多级反馈队列调度算法是时间片轮转算法和优先级调度算法的综合和发展，通过动态调整进程优先级和时间片大小，不必事先估计进程的执行时间，多级反馈队列可兼顾多方面的系统目标，是目前公认的一种较好的进程调度算法。</p>
+<p>实施过程：</p>
+<ul>
+<li>设置多个优先级队列，并为各个队列赋予不同的优先级。第一个最高，以后一次降低</li>
+<li>每个队列中进程执行时间片的大小也各不相同，进程所在队列的优先级越高，其相应的时间片就越短。</li>
+<li>当一个新进程进入内存后，首先将它放入第一队列的末尾，按FCFS原则排队等待调度。当轮到该进程执行时，如它能在该时间片内完成，便可准备撤离系统；如果它在一个时间片结束时尚未完成，调度程序便将该进程转入第二队列的末尾，再同样地按FCFS原则等待调度执行；如果它在第二队列中运行一个时间片后仍未完成，再依次将它放入第三队列，……。</li>
+<li>仅当第一队列空闲时，调度程序才调度第二队列中的进程运行。</li>
+</ul>
+<p><img src="E:\typora-user-images\image-20220605145257711-169767934589536.png" srcset="/img/loading.gif" lazyload alt="image-20220605145257711"></p>
+<h3 id="实时调度"><a href="#实时调度" class="headerlink" title="实时调度"></a>实时调度</h3><p>实时任务是指具有及时性要求的、经常被重复执行的特定进程。</p>
+<p>实现实时调度的基本条件</p>
+<ul>
+<li>提供必要的信息</li>
+<li>系统处理能力强</li>
+<li>采用抢占式调度机制</li>
+<li>具有快速切换机制</li>
+</ul>
+<h4 id="非抢占式调度算法"><a href="#非抢占式调度算法" class="headerlink" title="非抢占式调度算法"></a>非抢占式调度算法</h4><p>非抢占式轮转调度算法: 调度程序每次选择队列中的第一个任务投入运行。当该任务完成后，便把它挂在轮转队列的末尾，等待下次调度运行。</p>
+<p>非抢占式优先调度算法: 如果在系统中存在着实时要求较为严格的任务，则可采用非抢占式优先调度算法，为这些任务赋予较高的优先级。当这些实时任务到达时，把它们安排在就绪队列的队首，等待当前任务自我终止或运行完成后，才能被调度执行。</p>
+<h4 id="抢占式调度算法"><a href="#抢占式调度算法" class="headerlink" title="抢占式调度算法"></a>抢占式调度算法</h4><ul>
+<li><p>基于时钟中断的抢占式优先权调度算法</p>
+<p>某实时任务到达后，如果该任务的优先级高于当前任务的优先级，这<br>时并不立即抢占当前任务的处理机，而是等到时钟中断到来时，调度程序才剥夺当前任务的执行，将处理机分配给新到的高优先权任务。</p>
+</li>
+<li><p>立即抢占的优先权调度算法</p>
+<p>一旦出现外部中断，只要当前任务未处于临界区，便能立即剥夺当前任务的执行，把处理机分配给请求中断的紧迫任务。</p>
+</li>
+</ul>
+<h4 id="最早截止时间优先算法-EDF"><a href="#最早截止时间优先算法-EDF" class="headerlink" title="最早截止时间优先算法(EDF)"></a>最早截止时间优先算法(EDF)</h4><p>该算法要求在系统中保持一个实时任务就绪队列，该队列按各任务截止时间的早晚排序；具有最早截止时间的任务排在队列的最前面。调度程序总是选择就绪队列中的第一个任务，未知分配处理机，使之投入运行。<br><img src="E:\typora-user-images\image-20220605150339387-169767934589538.png" srcset="/img/loading.gif" lazyload alt="image-20220605150339387"></p>
+<h4 id="最低松弛度优先算法-LLF"><a href="#最低松弛度优先算法-LLF" class="headerlink" title="最低松弛度优先算法(LLF)"></a>最低松弛度优先算法(LLF)</h4><p>松弛度&#x3D;完成截止时间-剩余运行时间-当前时间<br>该算法按松弛度排序实时任务的就绪队列，松弛度值最小的任务排在队列最前面，调度程序总是选择就绪队列中的队首任务执行。（当等待任务的松弛度值为0时才进行抢占）</p>
+<p><img src="E:\typora-user-images\image-20220605150939558-169767934589540.png" srcset="/img/loading.gif" lazyload alt="image-20220605150939558"></p>
+<p><img src="E:\typora-user-images\image-20220605150953092-169767934589539.png" srcset="/img/loading.gif" lazyload alt="image-20220605150953092"></p>
+<p>当等待任务的松弛度值为0时才进行抢占（如20ms时虽然A2的松弛度比B1的松弛度小，但A2并没有抢占B1）。</p>
+<ul>
+<li><p>当有任务执行时，只有等待任务的松弛度值为0才会<br>发生任务的调度，其他情况不发生调度。</p>
+</li>
+<li><p>任务执行结束后或无任务执行时，再比较等待任务的<br>松弛度值，较小的先执行。</p>
+</li>
+</ul>
+<h3 id="进程死锁"><a href="#进程死锁" class="headerlink" title="进程死锁"></a>进程死锁</h3><p>死锁是指多个进程在运行过程中因争夺资源而造成的一种僵局<br>死锁的进程都不能运行、释放资源、被唤醒</p>
+<p>产生死锁的原因：</p>
+<ul>
+<li>竞争资源<ul>
+<li>可重用资源的竞争</li>
+<li>可消耗资源的竞争</li>
+</ul>
+</li>
+<li>进程间推进顺序非法</li>
+</ul>
+<p>如果一组进程中的每一个进程都在等待仅有该组进程中的其他进程才能引发的事件，那么该组进程是死锁的</p>
+<p>死锁发生的四个必要条件</p>
+<ul>
+<li>互斥条件</li>
+<li>请求和保持条件</li>
+<li>不剥夺条件</li>
+<li>环路等待条件</li>
+</ul>
+<p>解决死锁的方法</p>
+<ul>
+<li>预防死锁</li>
+<li>避免死锁</li>
+<li>检测死锁</li>
+<li>解除死锁</li>
+</ul>
+<p>系统安全状态</p>
+<ul>
+<li><p>所谓安全状态，是指系统能按某种进程顺序，如&lt;P1，P2，…，Pn&gt;，依次为n个进程分配其所需资源，直至其最大需求，使每个进程都可顺利地完成，称系统处于安全状态。</p>
+</li>
+<li><p>称〈P1，P2，…，Pn〉序列为安全序列。否则，如果系统无法找到这样一个安全序列，则称系统处于不安全状态。</p>
+</li>
+</ul>
+<h4 id="银行家算法"><a href="#银行家算法" class="headerlink" title="银行家算法"></a>银行家算法</h4><p>避免死锁的关键在于如何准确的预测是否会出现死锁，从而避免死锁。</p>
+<p>n个进程（P1，P2，…，Pn）<br> m类资源（R1，R2，…，Rm）<br> 可利用资源向量：available[j]&#x3D;k, 资源Rj类有k个可用<br> 最大需求矩阵：Max[i,j]&#x3D;k,进程Pi最大请求k个Rj类资源<br> 分配矩阵：Allocation[i,j]&#x3D;k,进程Pi分配到k个Rj类资源<br> 需求矩阵：Need[i,j]&#x3D;k,进程Pi还需要k个Rj类资源<br>三个矩阵的关系：<br>Need [i, j] &#x3D; Max[i, j] – Allocation [i, j].</p>
+<p>算法步骤</p>
+<ul>
+<li>如果Requesti[j]≤Need[i,j],便转向步骤2；否则认为出错，因为它所需要的资源数已超过它所声明的最大值。</li>
+<li>如果Requesti[j]≤Available[j]，便转向步（3），否则，表示尚无足够资源，Pi须阻塞等待。</li>
+<li>系统试探着把资源分配给进程Pi，并修改下面数据结构中的数值：<br>Available[ j ] &#x3D; Available[ j ] - Requesti[ j ]；<br>Allocation[ i,j ] &#x3D; Allocation[ i,j ] + Requesti[ j ];<br>Need[ i, j ] &#x3D; Need[ i, j ] - Requesti[ j ]；(假分配)</li>
+<li>系统执行安全性算法，检查此次资源分配后，系统是否处于安全状态。</li>
+</ul>
+<p>安全性算法</p>
+<ul>
+<li>设置两个向量：<br>①工作向量Work: 它表示系统可提供给进程继续运行所需的各类资源数目，Work &#x3D; Available<br>②Finish：开始时先做Finish[i] &#x3D; false；当有足够资源分配给进程时，再令Finish[i] &#x3D; true</li>
+<li>从进程集合中找到一个能满足下述条件的进程：<br>①Finish[i] &#x3D; false；<br>②Need[i,j] ≤ work[j]；<br>若找到，执行步骤（3)；否则，执行步骤（4）。</li>
+<li>当进程只获得资源后，可顺利执行，直至完成，并释放出分配给它的资源，故应执行：<br>Work[ j ] &#x3D; Work[ i ] + Allocation[ i,j ]；<br>Finish[ i ] &#x3D; true;<br>go to step 2；</li>
+<li>如果所有进程的Finish[i] ＝ true都满足，则表示系统处于安全状态；否则，系统处于不安全状态。</li>
+</ul>
+<p><img src="E:\typora-user-images\image-20220605161924472-169767934589541.png" srcset="/img/loading.gif" lazyload alt="image-20220605161924472"></p>
+<h2 id="第四章-存储器管理"><a href="#第四章-存储器管理" class="headerlink" title="第四章 存储器管理"></a>第四章 存储器管理</h2><h3 id="存储器的层次结构"><a href="#存储器的层次结构" class="headerlink" title="存储器的层次结构"></a>存储器的层次结构</h3><p>三级存储器：</p>
+<ul>
+<li>CPU寄存器：寄存器<br>寄存器访问速度最快，与CPU协调工作</li>
+<li>主存：高速缓存Cache、主存、磁盘缓存<br>用于保存进程运行时的程序和数据。CPU的控制部件只能从主存中取得指令和数据到CPU寄存器，同样，CPU寄存器中的数据可存入主存。</li>
+<li>辅存：磁盘、可移动存储介质</li>
+</ul>
+<p>存储器管理的目的和功能</p>
+<ul>
+<li>主存储器的分配和管理：按用户要求把适当的存储空间分配给相应的作业。<br>一个有效的存储分配机制的功能：<ul>
+<li>记住每个存储区域的状态</li>
+<li>实施分配</li>
+<li>接收系统或用户释放的存储区域</li>
+</ul>
+</li>
+<li>提高主存储器的利用率</li>
+<li>”扩充“主存容量</li>
+<li>存储保护</li>
+</ul>
+<p>存储分配的三种方式</p>
+<ul>
+<li>直接指定方式</li>
+<li>静态分配方式</li>
+<li>动态分配方式</li>
+</ul>
+<p>基本概念</p>
+<ul>
+<li>逻辑地址(相对地址，虚地址)<br>用户的程序经过汇编或编译后形成目标代码，目标代码通常采用相对地址的形式，其首地址为0，其余指令中的地址都相对于首地址而编址</li>
+<li>物理地址(绝对地址，实地址)<br>内存中存储单元的地址，可直接寻址</li>
+<li>名空间<br>一个用高级语言编制的源程序，我们说它存在于由程序员建立的符号名字空间</li>
+<li>地址空间<br>程序用来访问信息所用地址单元的集合，是逻辑(相对)地址的集合，由编译程序生成</li>
+<li>存储空间<br>主存中物理单元的集合。这些单元的编号称物理地址或绝对地址。存储空间的大小是由主存的实际容量决定的</li>
+</ul>
+<p><img src="E:\typora-user-images\image-20220605170126277-169767934589542.png" srcset="/img/loading.gif" lazyload alt="image-20220605170126277"></p>
+<p>地址空间是逻辑地址的集合；存储空间是物理地址的集合。一个是“虚”的概念，一个是“实”的物体。<br> 一个编译好的目标程序存在于它自己的地址空间中，当要它在计算机上运行时，才把它装入存储空间。<br> 一个作业在编译、装入前后存在于不同的空间</p>
+<h3 id="程序的装入和链接"><a href="#程序的装入和链接" class="headerlink" title="程序的装入和链接"></a>程序的装入和链接</h3><p>再多道程序环境下，程序要运行必须为之创建进程，而创建进程需要把用户编写的源程序和数据装入内存。</p>
+<p>步骤：编译、链接、装入<br><img src="E:\typora-user-images\image-20220605175116624-169767934589543.png" srcset="/img/loading.gif" lazyload alt="image-20220605175116624"></p>
+<p>装入方式：</p>
+<ul>
+<li><p>绝对装入方式<br>在编译时，如果知道程序将驻留在内存的具体位置，那么编译程序将产生实际存储地址（绝对地址）的目标代码。</p>
+</li>
+<li><p>可重定位装入方式</p>
+<ul>
+<li><p>重定位</p>
+<p>经编译得到的目标模块中为相对地址（通常从0开始），即地址都是相对于0开始的。<br> 装入模块中的逻辑地址与实际装入内存的物理地址不同。<br>装入内存时，相对地址（数据、指令地址）要作出相应的修改以得到正确的物理地址，这个修改的过程称为重定位。</p>
+</li>
+<li><p>静态重定位<br>地址变换是在装入内存时一次完成的，且以后不能移动。<br> 一般情况下,物理地址&#x3D;相对地址+内存中的起始地址</p>
+</li>
+<li><p>动态重定位<br>装入程序将装入模块装入内存后，并不立即把装入模块中的相对地址转换为绝对地址，而是把这种地址转换推迟到程序执行时进行。在硬件地址变换机构的支持下，随着对每条指令或数据的访问自动进行地址变换，故称为动态重定位</p>
+<ul>
+<li>最简单的办法是利用一个重定位寄存器(RR)。该寄存器的值是由进程调度程序根据作业分配到的存储空间起始地址来设定的。</li>
+<li>在具有这种地址变换机构的计算机系统中，当执行作业时，不是根据CPU给出的有效地址去访问主存，而是将有效地址与重定位寄存器中的内容相加后得到的地址作为访问主存的地址。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>程序的链接</p>
+<ul>
+<li>静态链接<br>在程序运行之前，先将各目标模块及它们所需的库函数，链接成一个完整的装入模块（又称执行模块），以后不再拆开。</li>
+<li>装入时动态链接<br>用户源程序经编译后所得到的目标模块，是在装入内存时，边装入边链接的。即在装入一个目标模块时，若发生一个外部模块调用，将引起装入程序去找出相应的外部目标模块，并将其装入内存。</li>
+<li>运行时动态链接<br>采用运行时动态链接可将某些目标模块的链接推迟到执行时才进行，即在执行过程中，若发现一个被调用模块尚未装入内存时，由OS去找到该模块，将它装入内存，并链接到调用模块上。</li>
+</ul>
+<h3 id="连续的分配方式"><a href="#连续的分配方式" class="headerlink" title="连续的分配方式"></a>连续的分配方式</h3><p>连续分配指为用户程序分配一个连续的内存空间</p>
+<p>分配方式：</p>
+<ul>
+<li><p>单一连续分配方式<br>内存中仅驻留一道用户程序，整个用户区为一个用户独占。<br>内存分为两个区域：系统区，用户区。应用程序装入到用户区，可使用用户区全部空间。</p>
+</li>
+<li><p>分区式分配方式<br>将内存用户空间划分为若干个固定大小的区域，每个区域称为一个分区（region），在每个分区中只装入一道作业 ，从而支持多道程序并发设计。（分区是在系统启动时划定的，其大小和边界不能改变）</p>
+<p>为了实现这种固定分区的分配，系统需要建立一张分区说明表。这个分区说明表指出可用于分配的分区数以及每个区的大小、起始地址及状态。</p>
+<p>分配过程：当有作业要装入内存时，内存分配程序检索分区说明表，从中找出一个尚未使用的满足大小要求的分区分配给该作业，然后修改分区的状态；如果找不到合适的分区就拒绝为该作业分配内存。</p>
+<ul>
+<li><p>固定分区</p>
+<ul>
+<li>分区大小相等</li>
+<li>分区大小不等</li>
+</ul>
+</li>
+<li><p>动态可变分区<br>分区的数目固定大小可变&#x2F;分区的数目和大小都是可变的</p>
+</li>
+</ul>
+</li>
+<li><p>可重定位分区分配</p>
+</li>
+</ul>
+<p>分区分配中数据结构：空闲分区表和空闲分区链</p>
+<p>内零头(Internal Fragment ):<br>▪分配给用户但用户没有使用的空间<br>▪ “多分配的空间”<br>外零头(External Fragment )：<br>▪ 没有分配但无法分配的空间<br>▪ 太小而无法分配，“分不出去的空间”</p>
+<p>分区分配算法:</p>
+<h4 id="基于顺序搜索："><a href="#基于顺序搜索：" class="headerlink" title="基于顺序搜索："></a>基于顺序搜索：</h4><ul>
+<li><p>最佳适应算法(BF)<br>就是为一作业选择分区时总是寻找其大小最接近作业所要求的存储区域。即：把作业放<br>入这样的分区后剩下的零头最小。</p>
+<p>如果不存在这样的空白区，也只对比要求稍大的空白区进行划分，而绝不会去划分一个更大的空白区。</p>
+<p>为了加快查找速度，应将存储空间中所有的空白区按其大小递增的顺序链接起来，组成一空白区链(Free List)。</p>
+</li>
+<li><p>最坏适应算法(WF)<br>与最佳适应算法相反，它在为作业选择存储区域时，总是寻找最大的空白区。</p>
+<p>为了支持这个算法的实现，空白块应以大小递减的顺序链接起来。</p>
+</li>
+<li><p>首次适应算法(FF)<br>每个空白区按其在存储空间中<strong>地址递增</strong>的顺序链在一起，即每个后继空白区的起始地址总是比前者的大。在为作业分配存储区域时，从这个空白区链的始端开始查找，选择第一个足以满足请求的空白块，而不管它究竟有多大。</p>
+</li>
+<li><p>循环首次(下次)适应算法(NF)<br>把存储空间中空白区构成一个循环链。每次为存储请求查找合适的分区时，总是从上次查找结束的地方开始，只要找到一个足够大的空白区，就将它划分后分配出去。</p>
+</li>
+</ul>
+<h4 id="基于索引搜索："><a href="#基于索引搜索：" class="headerlink" title="基于索引搜索："></a>基于索引搜索：</h4><ul>
+<li><p>快速适应算法(QF)<br>将空闲分区根据其容量大小进行分类，对于每一类具有相同容量的所有空闲分区，单独设立一个空闲分区链表。</p>
+<p>同时，在内存中设立一张管理分区类型，并记录了该类型空闲分区链表表头的索引表，该表的每一个表项记录了对应类型空闲分区链表表头的指针。</p>
+<p>分配过程：根据进程的长度，寻找到能容纳它的最小空闲分区链表，并取下第一块进行分配即可</p>
+</li>
+<li><p>伙伴系统<br>在伙伴系统中可用内存块的大小为2^R(1≤R≤m)</p>
+<p>2^1表示分配的最小块的尺寸；<br>2^m表示分配的最大块的尺寸，通常是可供分配的整个内存<br>空间的大小。<br>对空闲区按照大小分类，相同大小的分区链接为一个双向空闲链表；最多可形成 k（0 ≤k≤m ）个链表。</p>
+<ul>
+<li><p>进程请求大小为n的存储空间时，<br>首先计算一个 i 值，使 2i－1 &lt; n ≤ 2i；<br>在空闲分区大小为 2i 的空闲分区链表中查找。<br>if 找到，即把该空闲分区分配给进程。<br>else 在分区大小为2i＋1的空闲分区链表中寻找;<br>    &#x2F;&#x2F;表明长度为2i的空闲分区已经耗尽<br>if 找到大小为2i＋1 的空闲分区<br>把该空闲分区分为相等的两个分区（一对伙伴），其中一个用于分配，另一个加入分区大小为 2i 的空闲分区链表中。<br>else 查找大小为2i＋2 的空闲分区……</p>
+<p><img src="E:\typora-user-images\image-20220605224821133-169767934589544.png" srcset="/img/loading.gif" lazyload alt="image-20220605224821133"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>分区分配操作</p>
+<ul>
+<li><p>分配内存<br>向操作系统提出一特定存储量的请求。通常，它并不要求这个分配的存储区域限于特定的位置，但是，这个区域必须是连续的。<br>系统利用某种分配算法，从空闲分区链(表)中找到所需大小的分区。<br>•请求的分区大小为u.size<br>•表中每个空闲分区的大小为m.size<br>•size是事先规定的不再切割的剩余分区的大小<br><img src="E:\typora-user-images\image-20220605205011466-169767934589545.png" srcset="/img/loading.gif" lazyload alt="image-20220605205011466"></p>
+</li>
+<li><p>回收内存<br>进程用于归还一个不再需用的存储区域。<br>当进程运行完毕释放内存时，系统根据回收区的首址，从空闲区链(表)中找到相应的插入点。</p>
+</li>
+<li><p>回收区于插入点的前一个空闲分区F1相邻接<br>此时应将回收区与插入点的前一分区合并，不必为回收分区分配新表项，而只需修改其前一分区F1的大小。<br><img src="E:\typora-user-images\image-20220605205238838-169767934589546.png" srcset="/img/loading.gif" lazyload alt="image-20220605205238838"></p>
+</li>
+<li><p>回收区仅与下面的空白区邻接，合并后仍为空白分区F2，但其起始地址和大小需改变<br>用回收区的首址作为新空闲区的首址，大小为两者之和<br><img src="E:\typora-user-images\image-20220605205429687-169767934589547.png" srcset="/img/loading.gif" lazyload alt="image-20220605205429687"></p>
+</li>
+<li><p>回收区与上、下面的空白区邻接<br>此时将三个分区合并，使用F1的表项和F1的首址，取消F2的表项，大小为三者之和。<br><img src="E:\typora-user-images\image-20220605205609675-169767934589548.png" srcset="/img/loading.gif" lazyload alt="image-20220605205609675"></p>
+</li>
+<li><p>回收区与上、下面的空白区均不邻接，<br>在这种情况下，应为回收区单独建立一新表项，填写回收区的首址和大小，并根据首地址插入到空闲链中的适当位置。</p>
+</li>
+</ul>
+<h4 id="哈希算法"><a href="#哈希算法" class="headerlink" title="哈希算法"></a>哈希算法</h4><p>利用哈希快速查找的优点，以及空闲分区在可利用空间表中的分布规律，建立哈希函数，构造一<br>张哈希表，以空闲分区大小为关键字，每一个表项记录了一个对应的空闲分区链表表头指针。</p>
+<p>当进行空闲分区分配时，根据所需空闲分区大小，通过哈希函数计算，即得到在哈希表中的位置，从中得到相应的空闲分区链表，实现最佳分配策略。</p>
+<h4 id="可重定位分区分配"><a href="#可重定位分区分配" class="headerlink" title="可重定位分区分配"></a>可重定位分区分配</h4><p>可变式分区分配策略是在装入作业时根据其要求量为其划定相应的区域。这种分配策略，消除了固定式分区分配造成的“内零头”，但不可避免地在存储空间中造成“外零头”，为了进一步提高存储器的利用率，必须设法减少由于外零头造成的浪费。</p>
+<p>实现方法将内存中的所有作业进行移动，使它们全都相邻接，这样，可把原来分散的多个小分区合成一个大分区。这种技术称为存储器的“紧凑”。</p>
+<ul>
+<li><p>动态重定位</p>
+<p>在动态运行时装入的方式中，作业装入内存后的所有地址都仍然是相对地址，将相对地址转换为物理地址的工作，被推迟到程序指令要真正执行时进行。<br>程序在执行时，真正访问的内存地址是相对地址与重定位<br>寄存器中的地址相加而形成的。<br><img src="E:\typora-user-images\image-20220605225559680-169767934589549.png" srcset="/img/loading.gif" lazyload alt="image-20220605225559680"></p>
+<p><img src="E:\typora-user-images\image-20220605225629393-169767934589550.png" srcset="/img/loading.gif" lazyload alt="image-20220605225629393"></p>
+</li>
+</ul>
+<h3 id="基本分页存储管理方式"><a href="#基本分页存储管理方式" class="headerlink" title="基本分页存储管理方式"></a>基本分页存储管理方式</h3><p>离散分配方式——允许将作业&#x2F;进程离散放到多个不相邻接的分区中，从而避免拼接</p>
+<p>空间划分：</p>
+<ul>
+<li><p>页：</p>
+<p>将一个用户进程的地址空间（逻辑）划分成若干个大小相等的区域，称为页或页面(Page),并为各页从0开始编号</p>
+</li>
+<li><p>块：</p>
+<p>内存空间也分成若干个与页大小相等的区域，称为（存储、物理）块或页框（Frame），同样从0开始编号。<br><img src="E:\typora-user-images\image-20220605230113193-169767934589551.png" srcset="/img/loading.gif" lazyload alt="image-20220605230113193"></p>
+</li>
+</ul>
+<p><strong>数据结构：</strong></p>
+<ul>
+<li><p>页表(一般存放在内存中)</p>
+<p>每个进程对应1个页表，描述该进程的各页面在内存中对应的物理块号</p>
+<ul>
+<li>页表中包括页号，物理块号（还可有存取控制字段，对存储块中的内容进行保护）</li>
+<li>注意：全部页表集中存放在主存的系统专用区中，只有系统有权访问页表，保证安全</li>
+</ul>
+<p>作用：实现从页号到物理块号的地址映射</p>
+</li>
+<li><p>作业表</p>
+<p>整个系统1张，记录作业的页表情况，保护进程号，页表长度，页表始址</p>
+</li>
+<li><p>空闲块表</p>
+<p>整个系统1张，记录主存当前空闲块</p>
+</li>
+</ul>
+<p><strong>地址结构：</strong></p>
+<p>在分页存储管理方式中，任何一个逻辑地址都可转变为：页号+页内位移量。</p>
+<p>页号：P&#x3D;INT[A&#x2F;L]<br>页内位移量：W&#x3D;A MOD L<br>例：如有逻辑地址为：2170，页面大小为1KB，则P&#x3D;INT[2170&#x2F;1024]&#x3D;2；W&#x3D;2170 MOD 1024&#x3D;122</p>
+<p><strong>地址变换机构</strong></p>
+<p>功能：将用户的逻辑地址转变为内存中的物理地址<br>页的大小和内存物理块的大小是相同的，所以页内位移量即为物理块内位移量。</p>
+<p>变换过程：</p>
+<ul>
+<li>根据逻辑地址,计算出页号和页内偏移量；</li>
+<li>从PTR(页表寄存器)中得到页表首址，然后检索页表，查找<br>指定页面对应的页框号；</li>
+<li>用页框号乘以页面大小获得其对应的起始地址，<br>并将其送入物理地址的高端。</li>
+<li>将页内偏移量送入物理地址低端，形成完整的<br>物理地址。</li>
+</ul>
+<p><strong>具有快表的地址变换机构</strong></p>
+<p>快表：一个专用的高速缓冲存储器，专门保存当前进程最近访问过的一组页表项</p>
+<ul>
+<li>根据逻辑地址中的页号，查找快表中是否存在对应的页表项。</li>
+<li>若快表中存在该表项，称为命中（hit），取出其中的页框号，加上页内偏移量，计算出物理地<br>址。</li>
+<li>若快表中不存在该页表项，称为命中失败，则再查找页表，找到逻辑地址中指定页号对应的页框号。同时，更新快表，将该表项插入快表中。并计算物理地址.</li>
+</ul>
+<p>访问内存的有效时间 EAT：从进程发出指定逻辑地址的访问请求，经过地址变换，再到内存中找到对应的物理单元并取出数据，所花费的总时间</p>
+<p><strong>两级和多级页表</strong></p>
+<p>二级页表：将当前需要的部分页表项调入内存， 其余的页表项仍驻留在磁盘上，需要时再调入</p>
+<p>可将页表进行分页，并离散地将各个页面分别存放在不同的物理块中，<br>同样也要为离散分配的页表再建立一张页表，称为外层页表(Outer Page Table)，在每个页表项中记录了页表分页的物理块号。</p>
+<p><img src="E:\typora-user-images\image-20220606220430490-169767934589552.png" srcset="/img/loading.gif" lazyload alt="image-20220606220430490"></p>
+<p><img src="E:\typora-user-images\image-20220606220559885-169767934589553.png" srcset="/img/loading.gif" lazyload alt="image-20220606220559885"></p>
+<p><strong>反置页表</strong></p>
+<p>（1）IPT是为主存中的每一个物理块建立一个页表项并按照块号排序；<br>（2）该表每个表项包含正在访问该物理块的进程标识、页号及特征位,用来完成主存物理块到访问进程的页号的转换</p>
+<p><strong>对换</strong></p>
+<p>指把内存中暂不能运行的进程或暂时不用和程序和数据，换到外存上，以腾出足够的内存空间，把已具备运行条件的进程，或进程所需要的程序和数据，换入内存</p>
+<ul>
+<li><p>整体对换（进程对换）</p>
+<p>对换以整个进程为单位，用于分时系统，以解决内存紧张的问题；</p>
+</li>
+<li><p>页面对换&#x2F;分段对换</p>
+<p>对换以“页”或“段”为单位进行“部分对换”，该方法是实现请求分页及请求分段存储器的基础，支持虚存系统。</p>
+</li>
+</ul>
+<p>外存被分为两部分：文件区（存放文件）和对换区（存放从内存换出的进程）</p>
+<p>数据结构：</p>
+<ul>
+<li>空闲分区表或空闲分区链。在空闲分区表中的每个表目应包含两项，即对换分区首址和对换<br>区长度，它们的基本单位都是盘块。</li>
+</ul>
+<p>换出（swap out）</p>
+<ul>
+<li>选择：首先选择阻塞或睡眠状态的进程，若有多个，按优先级由低到高进行选择。若没有此状态进程，则选择就绪状态的，仍然按优先级由低到高进行选择。为避免某进程被频繁的换入换出，还应考虑进程在内存中的驻留时间，优先选择驻留时间长的进程。对换（续）</li>
+</ul>
+<p>换入（swap in）</p>
+<ul>
+<li>①从 PCB集合中查找“就绪且换出”的进程，有多个，则选择换出时间最长的。<br>根据进程大小申请内存，成功则读入，否则要先执行换出，再换入。<br>若还有可换入进程，则转向①。直至无“就绪且换出”进程或无法获得足够内存空间为止。</li>
+</ul>
+<h3 id="分段式存储管理"><a href="#分段式存储管理" class="headerlink" title="分段式存储管理"></a>分段式存储管理</h3><h4 id="分段式存储管理方式的引入"><a href="#分段式存储管理方式的引入" class="headerlink" title="分段式存储管理方式的引入"></a>分段式存储管理方式的引入</h4><p>优势：方便编程、分段共享、分段保护、动态链接、动态增长</p>
+<p><strong>分段</strong></p>
+<ul>
+<li>作业地址空间按逻辑信息的完整性被划分为若干个段；</li>
+<li>每段有段名（或段号），每段从0开始编址；</li>
+<li>段内的地址空间是连续的</li>
+<li>许多编译程序支持分段方式，自动根据源程序的情况<br>产生若干个段。</li>
+</ul>
+<p><img src="E:\typora-user-images\image-20220606222517343-169767934589554.png" srcset="/img/loading.gif" lazyload alt="image-20220606222517343"></p>
+<p>分段管理，就是管理由若干分段组成的作业，且按分段来进行存储分配。</p>
+<p>段表：</p>
+<ul>
+<li>为每个分段分配一个连续的分区，而进程中的各个段可以离散地移入内存中不同的分区中。</li>
+<li>应像分页系统那样，在系统中为每个进程建立一张段映射表，简称“段表”。每个段在表中占有一个表项，其中记录了该段在内存中的起始地址(又称为“基址”)和段的长度</li>
+<li>通常将段表放在内存中，执行中的进程可通过查找段表找到每个段所对应的内存区。</li>
+</ul>
+<p>地址表换机构：</p>
+<p><img src="E:\typora-user-images\image-20220607170757252-169767934589555.png" srcset="/img/loading.gif" lazyload alt="image-20220607170757252"></p>
+<p><strong>信息共享</strong></p>
+<p><img src="E:\typora-user-images\image-20220607170937568-169767934589556.png" srcset="/img/loading.gif" lazyload alt="image-20220607170937568"></p>
+<h4 id="段页式存储管理方式"><a href="#段页式存储管理方式" class="headerlink" title="段页式存储管理方式"></a>段页式存储管理方式</h4><p>先将用户程序分段，每段内再划分成若干页，每段有段名（段号），每段内部的页有一连续的页号。</p>
+<p>逻辑地址：由于段页式系统给作业地址空间增加了另一级结构，现在地址空间是由段号S、段内页号P 和页内相对地址(位移量)W构成。</p>
+<p>地址变换：</p>
+<ul>
+<li>首先，从段表寄存器从获得进程段表的起始地址，根据该地址，查找进程的段表。</li>
+<li>然后，根据逻辑地址指定的段号检索段表，找到对应段的页表起始地址。</li>
+<li>再根据逻辑地址中指定的页号检索该页表，找到对应页所在的物理块号。</li>
+<li>最后，用物理块号加上逻辑地址中指定的页内偏移量，形成物理地址</li>
+</ul>
+<h3 id="虚拟存储器"><a href="#虚拟存储器" class="headerlink" title="虚拟存储器"></a>虚拟存储器</h3><p>内存的扩充方法：</p>
+<ul>
+<li>物理扩充：<br>增加硬件投入，受机器自身和成本的限制。</li>
+<li>逻辑扩充<ul>
+<li>覆盖（overlay）<br>应用程序手动把需要的指令和数据保存在内存中</li>
+<li>对换（swapping）<br>操作系统自动把暂时不能执行的程序保存到外存中</li>
+<li>虚拟存储<br>在有限容量的内存中，自动装入更多更大的程序</li>
+</ul>
+</li>
+</ul>
+<p>局部性原理：序的执行总是呈现局部性。即，在一个较短的时间段内，程序的执行仅限于某个部分；相应的，它所访问的存储空间也局限于某个区域。因此，只要保证进程执行所需的部分程序和数据驻留在内存，一段时间内进程都能顺利执行。</p>
+<p>虚拟存储器：当进程运行时，先将当前要运行的部分程序装入内存，其他部分暂留外存；<br> 当要执行的指令不在内存时，处理器发生中断，通知操作系统将所缺部分从外存调入内存，保证程序继续执行；<br> 当内存不足时，允许程序部分换入、换出</p>
+<p>特征：多次性、对换性、虚拟性</p>
+<p>实现方法：</p>
+<ul>
+<li><p>请求分页系统</p>
+<p>请求分页的页表机制。缺页中断机构。地址变换机构</p>
+<p>请求调页、页面置换</p>
+</li>
+<li><p>请求分段系统</p>
+</li>
+<li><p>段页式虚拟系统</p>
+</li>
+</ul>
+<h3 id="请求分页存储管理方式"><a href="#请求分页存储管理方式" class="headerlink" title="请求分页存储管理方式"></a>请求分页存储管理方式</h3><p>页表机制：</p>
+<p><img src="E:\typora-user-images\image-20220607183209907-169767934589557.png" srcset="/img/loading.gif" lazyload alt="image-20220607183209907"></p>
+<p>缺页中断处理：</p>
+<ul>
+<li>操作系统接收到进程产生的缺页中断信号，启动中断处<br>理例程，保留处理机现场；</li>
+<li>操作系统通知处理机从外存读取指定的页面；</li>
+<li>处理机激活I&#x2F;O设备；</li>
+<li>检查内存有无足够的空闲空间装入该页面？若有，转<br>（6），否则，执行（5）；</li>
+<li>（5） 利用页面置换算法，选择内存中的某个页面，换出内存；</li>
+<li>（6） 将指定页面从外存装入内存；</li>
+<li>更新该进程的页表；</li>
+<li>更新快表；</li>
+<li>计算物理地址。</li>
+</ul>
+<h4 id="内存分配策略和分配算法"><a href="#内存分配策略和分配算法" class="headerlink" title="内存分配策略和分配算法"></a>内存分配策略和分配算法</h4><p>最小物理块数：是指能保证进程正常运行所需的最少物理块数。若系统为某进程所分配的物理块数少于此值时，进程将无法运行。</p>
+<p>物理块的分配策略：</p>
+<ul>
+<li>固定分配局部置换<br>（Fixed Allocation，Local Replacement）</li>
+<li>可变分配全局置换<br>（Variable Allocation，Global Replacement）</li>
+<li>可变分配局部置换<br>（Variable Allocation， Local Replacement ）</li>
+</ul>
+<p>物理块的分配算法：</p>
+<ul>
+<li><p>平均分配算法</p>
+</li>
+<li><p>按比例分配算法</p>
+<p><img src="E:\typora-user-images\image-20220607185436904-169767934589558.png" srcset="/img/loading.gif" lazyload alt="image-20220607185436904"></p>
+</li>
+<li><p>考虑优先权的分配算法</p>
+</li>
+</ul>
+<h4 id="调页策略"><a href="#调页策略" class="headerlink" title="调页策略"></a>调页策略</h4><p>调页时机：预调页，请求调页</p>
+<p>调入位置：用于存放文件的文件区；用于存放对换页面的对换区。</p>
+<ul>
+<li><p>系统拥有足够的对换区空间</p>
+</li>
+<li><p>系统缺少足够的对换区空间</p>
+<p>这时凡是不会被修改的文件，都直接从文件区调入；</p>
+<ul>
+<li>而当换出这些页面时，由于它们未被修改而不必再将它们换出，以后再调入时，仍从文件区直接调入。</li>
+<li>但对于那些可能被修改的部分，在将它们换出时，便须调到对换区，以后需要时，再从对换区调入。</li>
+</ul>
+</li>
+<li><p>unix方式</p>
+<p>由于与进程有关的文件都放在文件区，应从文件区调入。故凡是未运行过的页面，都应从文件区调入。而对于曾经运行过但又被换出的页面，由于是被放在对换区，因此在下次调入时，应从对换区调入。</p>
+</li>
+</ul>
+<p>页面调入过程：</p>
+<ul>
+<li>每当程序所要访问的页面未在内存时，便向CPU发出一缺页中断。</li>
+<li>中断处理程序首先保留CPU环境，分析中断原因后，转入缺页中断处理程序。</li>
+<li>如果内存已满，则须先按照某种置换算法从内存中选出一页准备换出；如果此页已被修改，则必须将它写回磁盘。</li>
+<li>然后再把所缺的页调入内存，并修改页表中的相应表项，置其存在位为“1”，并将此页表项写入快表中。</li>
+<li>形成所要访问数据的物理地址，再去访问内存数据。</li>
+</ul>
+<h4 id="页面置换算法"><a href="#页面置换算法" class="headerlink" title="页面置换算法"></a>页面置换算法</h4><ul>
+<li><p>最佳置换算法(OPT)</p>
+<p>从主存中移出永远不再需要的页面；如无这样的页面存在，则应选择最长时<br>间不需要访问的页面。</p>
+</li>
+<li><p>先进先出页面置换算法(FIFO)</p>
+<p>总是选择作业中驻留时间最长(即最老)的一页淘汰。即：先进入主存的页面先退出主存</p>
+</li>
+<li><p>最近最久未使用置换算法(LRU)</p>
+<p><img src="E:\typora-user-images\image-20220607191115105-169767934589560.png" srcset="/img/loading.gif" lazyload alt="image-20220607191115105"></p>
+<ul>
+<li><p>移位寄存器。用于记录某进程在内存中各页使用情况。</p>
+<p>为了记录某进程在内存中各页的使用情况，须为每个在内存中的页面配置一个移位寄存器可表示为：R&#x3D;Rn-1Rn-2Rn-3···R2R1RO<br>当进程访问某物理块时，要将相应寄存器的最高位Rn-1位置成1。系统每隔一定时间（例如100 ms）将寄存器右移一位。<br>如果我们把n位寄存器的数看作是一个整数，那么，具有最小数值的寄存器所对应的页面，就是最近最久未使用的页面。</p>
+</li>
+<li><p>栈。用于保存当前进程使用的各个页面的页面号。</p>
+<p>每当进程访问时某页面时，便将该页面号从栈中移出，压入栈顶。这样栈底则是最近最久未使用页面的页面号。 例如:假定一进程访问某页面的时页面号如下(5个存储块）：</p>
+</li>
+</ul>
+</li>
+<li><p>最少使用置换算法(LFU)</p>
+<p><img src="E:\typora-user-images\image-20220607191539097-169767934589559.png" srcset="/img/loading.gif" lazyload alt="image-20220607191539097"></p>
+</li>
+<li><p>Clock置换算法</p>
+<p><img src="E:\typora-user-images\image-20220607191620995-169767934589561.png" srcset="/img/loading.gif" lazyload alt="image-20220607191620995"></p>
+</li>
+<li><p>改进型Clock置换算法</p>
+<p><img src="E:\typora-user-images\image-20220607191646194-169767934589562.png" srcset="/img/loading.gif" lazyload alt="image-20220607191646194"></p>
+</li>
+<li><p>其他置换算法</p>
+</li>
+</ul>
+<h3 id="缺页率对有效访问时间的影响"><a href="#缺页率对有效访问时间的影响" class="headerlink" title="缺页率对有效访问时间的影响"></a>缺页率对有效访问时间的影响</h3><p><img src="E:\typora-user-images\image-20220607191755507-169767934589663.png" srcset="/img/loading.gif" lazyload alt="image-20220607191755507"></p>
+<p><img src="E:\typora-user-images\image-20220607191956397-169767934589665.png" srcset="/img/loading.gif" lazyload alt="image-20220607191956397"></p>
+<h3 id="请求分段存储管理方式"><a href="#请求分段存储管理方式" class="headerlink" title="请求分段存储管理方式"></a>请求分段存储管理方式</h3><p><img src="E:\typora-user-images\image-20220607192026905-169767934589664.png" srcset="/img/loading.gif" lazyload alt="image-20220607192026905"></p>
+<h2 id="第七章-UNIX-x2F-Linux系统入门"><a href="#第七章-UNIX-x2F-Linux系统入门" class="headerlink" title="第七章 UNIX&#x2F;Linux系统入门"></a>第七章 UNIX&#x2F;Linux系统入门</h2><p>一个基于多用户、多任务、支持多线程和多CPU的操作系统</p>
+<p>由Linux内核，LinuxShell，Linux文件系统，Linux应用程序组成，分为内核层和外核层，<br>内核层 是UNIX操作系统的核心，它实现存储管理、文件管理、设备管理、进程管理等功能并为外壳层提供系统调用。外壳层 为用户提供各种操作命令（UNIX把它们称为shell命令）和程序设计环境。外壳层由shell解释程序、支持程序设计的各种语言（如C、PASCAL和BASIC等）、编译程序和解释程序、实用程序和系统库等组成。</p>
+<p>内核：</p>
+<p><img src="E:\typora-user-images\image-20220607141812672-169767934589666.png" srcset="/img/loading.gif" lazyload alt="image-20220607141812672"></p>
+<h4 id="功能特征："><a href="#功能特征：" class="headerlink" title="功能特征："></a>功能特征：</h4><ul>
+<li>开放性</li>
+<li>多用户，多任务</li>
+<li>良好的用户界面</li>
+<li>设备独立性</li>
+<li>提供了丰富的网络功能</li>
+<li>可靠的安全系统</li>
+<li>良好的可移植性</li>
+</ul>
+<h2 id="第八章-Shell的交互功能和程序设计"><a href="#第八章-Shell的交互功能和程序设计" class="headerlink" title="第八章 Shell的交互功能和程序设计"></a>第八章 Shell的交互功能和程序设计</h2><h4 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h4><ul>
+<li>command &gt; filename 进程输出覆盖文件 filename</li>
+<li>command &gt;&gt; filename 进程输出追加到文件filename后面,不覆盖filename</li>
+</ul>
+<p><strong>输入重定向：</strong></p>
+<ul>
+<li>command &lt; filename，进程的输入来自文件filename,</li>
+</ul>
+<p>特殊例子：cat &lt; file1 &gt; file2：file1的内容写入file2中</p>
+<p><strong>标准错误输出重定向：</strong></p>
+<ul>
+<li>command 2&gt; filename ( 2和&gt;之间没有空格 )：进程运行中的错误信息重定向到文件filename,</li>
+</ul>
+<p>特殊例子：$ grep string6 data_sav &gt; count_log 2&gt; &amp;1<br>把进程的出错信息存放到标准输出(已重定向到count_log)中, 即把标准输出和标准错误输出都定向到一个文件中.</p>
+<p><strong>管道</strong></p>
+<p>管道用于连接两个命令, 它把前一个命令的标准输出重定向给后一个命令作为标准输入, 其格式为:<br>command1 | command2<br>对command1来说标准输出被重新定向到管道, 对command2来说标准输入也被重新定向为管道.</p>
+<p>例：</p>
+<p><img src="E:\typora-user-images\image-20220607144244381-169767934589667.png" srcset="/img/loading.gif" lazyload alt="image-20220607144244381"></p>
+<p><img src="E:\typora-user-images\image-20220607144253812-169767934589668.png" srcset="/img/loading.gif" lazyload alt="image-20220607144253812"></p>
+<p><strong>多条命令</strong></p>
+<p>$ pwd; who; date</p>
+<p><strong>复合命令</strong></p>
+<p><img src="E:\typora-user-images\image-20220607144404262-169767934589669.png" srcset="/img/loading.gif" lazyload alt="image-20220607144404262"></p>
+<p><strong>后台命令</strong></p>
+<p><img src="E:\typora-user-images\image-20220607144447461-169767934589670.png" srcset="/img/loading.gif" lazyload alt="image-20220607144447461"></p>
+<h4 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h4><p><img src="E:\typora-user-images\image-20220607144556354-169767934589672.png" srcset="/img/loading.gif" lazyload alt="image-20220607144556354"></p>
+<p><strong>系统变量</strong></p>
+<p><img src="E:\typora-user-images\image-20220607144645258-169767934589671.png" srcset="/img/loading.gif" lazyload alt="image-20220607144645258"></p>
+<p><strong>Shell变量和应用符</strong></p>
+<p><img src="E:\typora-user-images\image-20220607144931020-169767934589673.png" srcset="/img/loading.gif" lazyload alt="image-20220607144931020"></p>
+<p><img src="E:\typora-user-images\image-20220607144952211-169767934589674.png" srcset="/img/loading.gif" lazyload alt="image-20220607144952211"></p>
+<p><img src="E:\typora-user-images\image-20220607145048987-169767934589675.png" srcset="/img/loading.gif" lazyload alt="image-20220607145048987"></p>
+<p><img src="E:\typora-user-images\image-20220607145211308-169767934589676.png" srcset="/img/loading.gif" lazyload alt="image-20220607145211308"></p>
+<p><strong>进程</strong></p>
+<p>ps -e&#x2F;ps -a</p>
+<p>ps -f</p>
+<p>kill PID：正常结束进程, 自动完成所有善后工作, 作用类似于按 Del 键</p>
+<p>kill -1 PID：先挂起该进程, 终止子进程, 完成善后工作, 再终止该进程</p>
+<p>kill -9 PID：立即强行终止该进程, 不作任何善后工作. 可能出现资源浪费和”孤儿<br>“进程.</p>
+<h4 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h4><ul>
+<li>expr命令：</li>
+</ul>
+<p><img src="E:\typora-user-images\image-20220607151005026-169767934589677.png" srcset="/img/loading.gif" lazyload alt="image-20220607151005026"></p>
+<ul>
+<li><p>tput命令</p>
+<p><img src="E:\typora-user-images\image-20220607151120757-169767934589678.png" srcset="/img/loading.gif" lazyload alt="image-20220607151120757"></p>
+</li>
+<li><p>结构性语句</p>
+<ul>
+<li><p>test语句：test命令测试的条件成立时, 命令返回值为真(0)，否则返回值为假(非0).</p>
+<p><img src="E:\typora-user-images\image-20220607151434880-169767934589679.png" srcset="/img/loading.gif" lazyload alt="image-20220607151434880"></p>
+</li>
+<li><p>if 表达式<br>then 命令表<br>fi</p>
+</li>
+<li><p>if 表达式<br>then 命令表1<br>else 命令表2<br>fi</p>
+</li>
+<li><p>case…esac</p>
+<p><img src="E:\typora-user-images\image-20220607151618917-169767934589680.png" srcset="/img/loading.gif" lazyload alt="image-20220607151618917"></p>
+</li>
+<li><p>for…do…done</p>
+<p>for 变量名 in 单词表<br>do<br>命令表<br>done</p>
+<p><img src="E:\typora-user-images\image-20220607152150438-169767934589681.png" srcset="/img/loading.gif" lazyload alt="image-20220607152150438"></p>
+</li>
+<li><p>while…do…done</p>
+<p>while 命令或表达式<br>do<br>命令表<br>done</p>
+<p><img src="E:\typora-user-images\image-20220607152439764-169767934589682.png" srcset="/img/loading.gif" lazyload alt="image-20220607152439764"></p>
+</li>
+<li><p>until…do…done</p>
+<p>until 命令或表达式<br>do<br>命令表<br>done</p>
+<p>until循环与while循环的功能相似, 所不同的是只有当测试的命令或表达式的值是假时, 才执行循环体中的命令表, 否则退出循环。 这一点与while命令正好相反。</p>
+</li>
+<li><p>循环控制语句 break 和 continue</p>
+<p>break语句从包含该语句的最近一层循环中跳出一层,break n 则跳出n层; continue语句则马上转到最近一层循环语句的下一轮循环上, continue n则转到最近n层循环语句的下一轮循环上.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Shell函数"><a href="#Shell函数" class="headerlink" title="Shell函数"></a>Shell函数</h4><p><img src="E:\typora-user-images\image-20220607152813752-169767934589683.png" srcset="/img/loading.gif" lazyload alt="image-20220607152813752"></p>
+<p><img src="E:\typora-user-images\image-20220607152845568-169767934589684.png" srcset="/img/loading.gif" lazyload alt="image-20220607152845568"></p>
+<p><strong>编程工具awk</strong></p>
+<p>awk ‘pattern {action}’ filename<br>awk扫描filename中的每一行, 对符合模式pattern的行执行操作action。</p>
+<p><img src="E:\typora-user-images\image-20220607154317622-169767934589685.png" srcset="/img/loading.gif" lazyload alt="image-20220607154317622"></p>
+<p><img src="E:\typora-user-images\image-20220607154334956-169767934589686.png" srcset="/img/loading.gif" lazyload alt="image-20220607154334956"></p>
+<p><img src="E:\typora-user-images\image-20220607154345527-169767934589687.png" srcset="/img/loading.gif" lazyload alt="image-20220607154345527"></p>
+<p><img src="E:\typora-user-images\image-20220607154355996-169767934589688.png" srcset="/img/loading.gif" lazyload alt="image-20220607154355996"></p>
+<p><img src="E:\typora-user-images\image-20220607154404950-169767934589689.png" srcset="/img/loading.gif" lazyload alt="image-20220607154404950"></p>
+<p><img src="E:\typora-user-images\image-20220607154419553-169767934589790.png" srcset="/img/loading.gif" lazyload alt="image-20220607154419553"></p>
+<p><img src="E:\typora-user-images\image-20220607154459783-169767934589791.png" srcset="/img/loading.gif" lazyload alt="image-20220607154459783"></p>
+<p><img src="E:\typora-user-images\image-20220607154509620-169767934589792.png" srcset="/img/loading.gif" lazyload alt="image-20220607154509620"></p>
+<h3 id="第九章-文件操作与权限管理"><a href="#第九章-文件操作与权限管理" class="headerlink" title="第九章 文件操作与权限管理"></a>第九章 文件操作与权限管理</h3><p>文件系统架构：</p>
+<p><img src="E:\typora-user-images\image-20220607155811313-169767934589793.png" srcset="/img/loading.gif" lazyload alt="image-20220607155811313"></p>
+<p>物理表现形式：</p>
+<ul>
+<li>超级块：用于存储文件系统的控制信息的数据结构。描述文件系统的状态、文件系统类型、大小、区块数、索引节点数等，存放于磁盘的特定扇区中。</li>
+<li>索引节点（i节点）：用于存储文件的元数据（文件的基本信息）的一个数据结构，包含诸如文件的大小、拥有者、创建时间、数据块&#x2F;目录块位置等信息。</li>
+<li>目录块：存放目录文件的内容<ul>
+<li>目录文件内容：一系列目录项（dirent）的列表，每个目录项由<br>两部分组成：所包含文件的文件名；文件名对应的索引节点（inode）号</li>
+</ul>
+</li>
+<li>数据块：存放非目录文件的内容</li>
+</ul>
+<p>文件在内核中的表现形式：</p>
+<ul>
+<li>每个进程在PCB中有一个文件描述符表，每个描述符表项指向一个文件表</li>
+<li>内核为每一个被该进程使用（打开）的文件维护一张文件表</li>
+<li>每个文件（或设备）都有一个索引节点，它包含了文件类型属性及文件数据</li>
+</ul>
+<h3 id="第十章-进程运行与监控"><a href="#第十章-进程运行与监控" class="headerlink" title="第十章 进程运行与监控"></a>第十章 进程运行与监控</h3><p>创建过程：</p>
+<ul>
+<li>在shell中执行命令或可执行文件<br>▪由shell进程调用fork函数创建子进程</li>
+<li>在代码中（已经存在的进程中）调用fork函数创建子进程<br>fork创建的进程为子进程<br>原进程为父进程</li>
+</ul>
+<p>父子进程关系：</p>
+<p>子进程是父进程的副本<br>▪子进程复制&#x2F;拷贝父进程的PCB、用户空间（数据段、<br>堆和栈）<br>▪父子进程共享正文段（只读）</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="category-chain-item">计算机基础</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>操作系统-总结</div>
+      <div>http://example.com/2023/10/19/操作系统-总结/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>JasmineChen</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年10月19日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/10/19/%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%80%BB%E7%BB%93/" title="数据库-总结">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">数据库-总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/10/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%80%BB%E7%BB%93/" title="计算机网络-总结">
+                        <span class="hidden-mobile">计算机网络-总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

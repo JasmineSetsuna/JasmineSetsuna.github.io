@@ -24,7 +24,7 @@
 <meta property="og:description" content="Java基础1.数据类型数据类型分为基础类型和引用类型，声明方式：类型 名称 &#x3D; 值 1.1.基础类型 内置数据类型： byte：8位，有符号的以二进制补码表示的整数 short：16 位、有符号的以二进制补码表示的整数 int：32位、有符号的以二进制补码表示的整数 long：64 位、有符号的以二进制补码表示的整数，声明的值后面需加大写的L float：单精度、32位、符合IEEE">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-16T12:46:11.000Z">
-<meta property="article:modified_time" content="2023-10-17T06:34:21.766Z">
+<meta property="article:modified_time" content="2023-10-17T15:59:33.410Z">
 <meta property="article:author" content="JasmineChen">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary_large_image">
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.2k 字
+          4.1k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          27 分钟
+          34 分钟
         
       </span>
     
@@ -289,7 +289,8 @@
 </li>
 </ul>
 <h3 id="1-2-引用类型"><a href="#1-2-引用类型" class="headerlink" title="1.2.引用类型"></a>1.2.引用类型</h3><ul>
-<li>Number类：为内置数据类型的包装类，用于声明对象。当内置数据类型被当作对象使用的时候，编译器会把内置类型装箱为包装类。相似的，编译器也可以把一个对象拆箱为内置类型。<ul>
+<li><p>Number类：为内置数据类型的包装类，用于声明对象。当内置数据类型被当作对象使用的时候，编译器会把内置类型装箱为包装类。相似的，编译器也可以把一个对象拆箱为内置类型。</p>
+<ul>
 <li>Boolean</li>
 <li>Byte</li>
 <li>Short</li>
@@ -300,19 +301,34 @@
 <li>Double</li>
 </ul>
 </li>
-<li>Math类</li>
-<li>Character类：基本类型char的包装类</li>
-<li>String类：不可变类，属于对象<ul>
+<li><p>Math类</p>
+</li>
+<li><p>Character类：基本类型char的包装类</p>
+</li>
+<li><p>String类：不可变类，属于对象</p>
+<ul>
 <li>String 直接创建的字符串存储在公共池中，而 new 创建的字符串对象在堆上</li>
 <li>.length()：获取字符串对象的长度</li>
 </ul>
 </li>
-<li>StringBuilder：可变类，该类的对象能够被多次的修改，并且不产生新的未使用对象，线程不安全<ul>
+<li><p>StringBuilder：可变类，该类的对象能够被多次的修改，并且不产生新的未使用对象，线程不安全</p>
+<ul>
 <li>声明方式：<code>StringBuilder sb new StringBuilder(length);</code>，通过append、insert、delete进行增删改查操作</li>
 </ul>
 </li>
-<li>StringBuffer：可变类，该类的对象能够被多次的修改，并且不产生新的未使用对象，线程安全</li>
-<li></li>
+<li><p>StringBuffer：可变类，该类的对象能够被多次的修改，并且不产生新的未使用对象，线程安全</p>
+<ul>
+<li>声明方式：和StringBuilder类声明方式一样</li>
+</ul>
+</li>
+<li><p>Date类：</p>
+<ul>
+<li>声明方式：<code>Date date = new Date() / new Date(long millisec)</code><ul>
+<li>第二种方式的参数是从 1970 年 1 月 1 日起的毫秒数</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h3 id="1-3-类型转换"><a href="#1-3-类型转换" class="headerlink" title="1.3.类型转换"></a>1.3.类型转换</h3><ul>
 <li>自动类型转换：转换从低到高，<code>byte,short,char—&gt; int —&gt; long—&gt; float —&gt; double</code> <ul>
@@ -347,7 +363,7 @@
 <li><p>使用格式：( Object reference variable ) instanceof  (class&#x2F;interface type) </p>
 </li>
 <li><p>&#96;&#96;&#96;java<br>String name &#x3D; “James”;<br>boolean result &#x3D; name instanceof String;&#x2F;&#x2F; true</p>
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><br><br><br>## <span class="hljs-number">2.</span>对象和类<br><br>**对象**：对象是类的一个实例（**对象不是找个女朋友**），有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。<br><br>**类**：类是一个模板，它描述一类对象的行为和状态。<br><br>**声明对象**：<br><br>- 声明方式：`<span class="hljs-keyword">Object</span> <span class="hljs-keyword">object</span> = <span class="hljs-built_in">new</span> <span class="hljs-keyword">Class</span>()`，<span class="hljs-keyword">Object</span>和<span class="hljs-keyword">Class</span>同名<br><br>- 构造方法：与类同名，一个类可以有多个构造方法<br><br>  ```java<br>  <span class="hljs-built_in">public</span> <span class="hljs-keyword">class</span> Puppy&#123;<br>     <span class="hljs-type">int</span> puppyAge;<br>     <span class="hljs-built_in">public</span> Puppy(String <span class="hljs-type">name</span>)&#123;<br>        // 这个构造器仅有一个参数：<span class="hljs-type">name</span><br>        <span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(&quot;小狗的名字是 : &quot; + <span class="hljs-type">name</span> ); <br>     &#125;<br>  &#125;<br>  <br>  Puppy myPuppy = <span class="hljs-built_in">new</span> Puppy( &quot;tommy&quot; );<br></code></pre></td></tr></table></figure></li>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><br><br><br>## <span class="hljs-number">2.</span>对象和类<br><br>**对象**：对象是类的一个实例（**对象不是找个女朋友**），有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。<br><br>**类**：类是一个模板，它描述一类对象的行为和状态。<br><br>**声明对象**：<br><br>- 声明方式：`<span class="hljs-keyword">Object</span> <span class="hljs-keyword">object</span> = <span class="hljs-built_in">new</span> <span class="hljs-keyword">Class</span>()`，<span class="hljs-keyword">Object</span>和<span class="hljs-keyword">Class</span>同名<br><br>- 构造方法：与类同名，一个类可以有多个构造方法，默认构造方法的访问修饰符和类的访问修饰符相同<br><br>  ```java<br>  <span class="hljs-built_in">public</span> <span class="hljs-keyword">class</span> Puppy&#123;<br>     <span class="hljs-type">int</span> puppyAge;<br>     <span class="hljs-built_in">public</span> Puppy(String <span class="hljs-type">name</span>)&#123;<br>        // 这个构造器仅有一个参数：<span class="hljs-type">name</span><br>        <span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(&quot;小狗的名字是 : &quot; + <span class="hljs-type">name</span> ); <br>     &#125;<br>  &#125;<br>  <br>  Puppy myPuppy = <span class="hljs-built_in">new</span> Puppy( &quot;tommy&quot; );<br></code></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>
@@ -363,17 +379,34 @@
 </li>
 </ul>
 </li>
-<li><p>二维数组</p>
+<li><p>多维数组</p>
 <ul>
-<li></li>
+<li><code>type[][] typeName = new type[typeLength1][typeLength2];</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="3-修饰符"><a href="#3-修饰符" class="headerlink" title="3.修饰符"></a>3.修饰符</h2><p>修饰符分为访问修饰符和非访问修饰符</p>
+<h2 id="4-函数"><a href="#4-函数" class="headerlink" title="4.函数"></a>4.函数</h2><p>声明方式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java">修饰符 返回值类型 方法名(参数类型 参数名)&#123;<br>    ...<br>    方法体<br>    ...<br>    <span class="hljs-keyword">return</span> 返回值;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>方法重载：Java支持方法重载，两个方法拥有相同的名字，但是有不同的参数列表，Java编译器根据方法签名判断哪个方法应该被调用。</p>
+</li>
+<li><p>可变参数：<code>typeName... parameterName</code>，方法的最后一个参数，为一个数组。任何普通的参数必须在它之前声明</p>
+</li>
+<li><p><code>finalize()</code> 方法：在对象被垃圾收集器析构(回收)之前调用，用来清除回收对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">finalize</span><span class="hljs-params">()</span><br>&#123;<br>   <span class="hljs-comment">// 在这里终结代码</span><br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="5-修饰符"><a href="#5-修饰符" class="headerlink" title="5.修饰符"></a>5.修饰符</h2><p>修饰符分为访问修饰符和非访问修饰符</p>
 <ul>
 <li><p>非访问修饰符</p>
 <ul>
-<li>static：用来修饰类方法和类变量。</li>
+<li>static：用来修饰类方法和类变量。<ul>
+<li>静态成员变量(Static Variables)：被 static修饰的成员变量称为静态成员变量或类变量。它们不属于类的任何一个实例，而是属于类本身。因此，即使创建了类的多个实例，静态成员变量也只有一份。只要静态成员变量所在的类被加载，这个静态成员变量就会被分配内存空间</li>
+<li>静态方法(Static Methods)：被 static修饰的方法称为静态方法或类方法。它们可以在不创建类的实例的情况下被调用。静态方法只能访问静态数据成员，并可以更改静态数据成员的值</li>
+<li>静态代码块(Static Blocks)：被 static修饰的代码块称为静态代码块或静态初始化器。它在加载类时会被执行，.因此可以在其中进行一些类成员变量的初始化工作</li>
+<li>静态内部类(Static Inner Classes)：被 static修饰的内部类称为静态内部类。它是类相关的内部类，可以不依赖于外部类实例而被实例化。静态内部类不能访问其外部类的实例成员（包括普通的成员变量和方法）只能访问外部类的类成员(包括静态成员变量和静态方法)</li>
+</ul>
+</li>
 <li>final：用来修饰类、方法和变量，final 修饰的类不能够被继承，修饰的方法不能被继承类重新定义，修饰的变量为常量，是不可修改的。</li>
 <li>abstract：用来创建抽象类和抽象方法。</li>
 <li>synchronized：声明的方法同一时间只能被一个线程访问</li>
@@ -442,7 +475,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="2-函数"><a href="#2-函数" class="headerlink" title="2.函数"></a>2.函数</h2><h2 id="3-判断语句"><a href="#3-判断语句" class="headerlink" title="3.判断语句"></a>3.判断语句</h2><ul>
+<h2 id="3-判断语句"><a href="#3-判断语句" class="headerlink" title="3.判断语句"></a>3.判断语句</h2><ul>
 <li><p>if</p>
 </li>
 <li><p>if…else</p>
@@ -554,6 +587,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2023/10/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%80%BB%E7%BB%93/" title="计算机网络-总结">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">计算机网络-总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
